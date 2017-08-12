@@ -1,0 +1,13 @@
+label{
+  font-size:18px;
+  font-family:cursive;
+}
+
+div.col-sm-2.col-xs-6{
+  text-align:center;
+}
+
+div.row{
+  padding:10px;
+}
+

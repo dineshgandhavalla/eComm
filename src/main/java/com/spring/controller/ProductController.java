@@ -98,7 +98,7 @@ public class ProductController {
 		 {
 			 productResult = product;
 			
-			 MultipartFile file=product.getImage();
+			MultipartFile file=product.getImage();
 			String rootDirectory = request.getSession().getServletContext().getRealPath("/");
 	        path = Paths.get(rootDirectory + "\\WEB-INF\\images\\"+product.getId()+".jpg");
 	        

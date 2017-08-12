@@ -13,6 +13,7 @@ public class Users {
 	@GeneratedValue 
 	private int id;
 	private String name,email,address,role,password,contact_number,repeat_password;
+
 	private boolean enabled;
 	
 	public boolean isEnabled() {

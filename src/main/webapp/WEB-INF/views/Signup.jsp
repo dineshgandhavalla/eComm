@@ -25,10 +25,10 @@
                 <h1>Sign Up</h1>
                 <div class="form-group">
                     <div class="col-sm-4 label-column">
-                        <form:label path="name" class="control-label" for="name-input-field">Name </form:label>
+                        <form:label path="name" class="control-label" for="name-input-field" >Name </form:label>
                     </div>
                     <div class="col-sm-6 input-column">
-                        <form:input path="name" class="form-control" type="text" placeholder="enter your name"/>
+                        <form:input path="name" class="form-control" type="text"   required="true" placeholder="enter your name"/>
                     </div>
                 </div>
                 <div class="form-group">

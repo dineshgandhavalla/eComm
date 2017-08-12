@@ -1,4 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -16,6 +18,8 @@
 </head>
 
 <body>
+${error}
+${logout }
    <!--  <div class="btn-group">
         <button class="btn btn-default" type="button">Button </button>
         <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><span class="caret"></span></button>
@@ -47,9 +51,16 @@
                         </ul>
                     </li>
                     <li class="active" role="presentation"><a href="#">Shop </a></li>
-                     <li role="presentation"><a href="admin">Admin </a></li>
-                    <li role="presentation"><a href="login">Login <i class="glyphicon glyphicon-log-in"></i></a></li>
+                    <!--  <li role="presentation"><a href="admin">Admin </a></li>
+                    
+ -->
+ 			 <sec:authorize access="!isAuthenticated()">                
+ 	    <li role="presentation"><a href="login">Login <i class="glyphicon glyphicon-log-in"></i></a></li>
                     <li role="presentation"><a href="signup">SignUp <i class="glyphicon glyphicon-user"></i></a></li>
+                    </sec:authorize>
+                    <sec:authorize access="isAuthenticated()">
+                              <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
+                              </sec:authorize>
                 </ul>
             </div>
         </div>
@@ -69,7 +80,7 @@
             <li data-target="#carousel-1" data-slide-to="2" class="active"></li>
         </ol>
     </div>
-    <footer>
+    <footer class="navbar-fixed-bottom">
         <div class="row">
             <div class="col-md-4 col-sm-6 footer-navigation">
                 <h3 class="text-center"> N Bakes &amp; Cakes</h3>

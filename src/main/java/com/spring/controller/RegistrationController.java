@@ -12,9 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.model.Product;
 import com.spring.model.Users;
@@ -88,10 +90,10 @@ public class RegistrationController {
 		    	 model.addAttribute("ProductPageClicked", "true");
 		    	 model.addAttribute("supplierList",supplierDAO.list());
 		    	 model.addAttribute("categoryList",categoryDAO.list());
-			 return "/admin";
+			 return "Admin";
 		     }
 	}
-		return "/WelcomePage";
+		return "index";
 	
 	}
     
@@ -112,10 +114,21 @@ public class RegistrationController {
 public String addUser(@ModelAttribute("users")Users users)
 {
 		
-		users.setRole("role_user");
+		users.setRole("ROLE_USER");
+		users.setEnabled(true);
 		userDAO.saveUser(users);
 		
 		return "redirect:/";
 		
 	}
+	
+	/*@RequestMapping(value = "navproducts/${id}")
+	public String listCategory(Model model,@PathVariable("id") int id,RedirectAttributes attributes) {
+	
+		model.addAttribute("navproducts", productDAO.getProductByCategory(id));
+		model.addAttribute("Clickedcatproduct", "true");
+		return "catproducts";
+	}*/
+	
+
 }

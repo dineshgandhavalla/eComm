@@ -153,7 +153,10 @@
 			<td>${product.description}</td>
 			<td>${product.price}</td>
 			<td>${product.stock}</td>
-			<td>${product.image}</td>
+			<td><div class="thumbnail">
+			<img height="100px" width="100px" atl="${product.id}"
+			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
+			</div></td>
 			
 			
 		</tr>

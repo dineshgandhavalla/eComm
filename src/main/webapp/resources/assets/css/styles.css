@@ -18,4 +18,14 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 i.glyphicon.glyphicon-align-justify{
   margin-left:5px;
 }
-
+.carousel-inner{
+	max-height:450px;
+	/* max-height:50%;
+	 */}
+.item{
+	width: 100%; 
+	height: auto;
+}
+.navbar-fixed-bottom{
+	max-height:250px;
+}

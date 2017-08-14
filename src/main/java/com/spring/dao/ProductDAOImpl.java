@@ -67,4 +67,10 @@ public class ProductDAOImpl implements ProductDAO {
 		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
 
+
+	public List getProductByCategory(int Categoryid) {
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createQuery("from Product where Catid="+Categoryid).list();
+	}
+
 }

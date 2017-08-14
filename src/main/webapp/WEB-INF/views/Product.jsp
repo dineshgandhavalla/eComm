@@ -2,6 +2,8 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+        <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
@@ -26,7 +28,15 @@
                     <li role="presentation"><a href="category">Category </a></li>
                     <li class="active" role="presentation"><a href="product">Product </a></li>
                     <li role="presentation"><a href="supplier">Supplier </a></li>
+                    <%-- <sec:authorize access="isAuthenticated()">
+                    <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
+                   </sec:authorize> --%>
                 </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                 <sec:authorize access="isAuthenticated()">
+                    <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
+                   </sec:authorize>
+                   </ul>
             </div>
         </div>
     </nav>
@@ -77,8 +87,13 @@
 	</div>
             
             <div class="row">
-            <form:label class="btn btn-default btn-block" path="Supid">Supplier</form:label>
-				<form:select path="Supid" class="form-control" required="true">
+            <div class="col-md-offset-3 col-sm-2 col-xs-6">
+            <form:label  path="Supid">Supplier</form:label>
+            </div>
+            
+               <div class="col-sm-4 col-xs-6">
+            
+				<form:select path="Supid" class=" btn btn-default btn-block dropdown-toggle form-control" data-toggle="dropdown" required="true">
 						
 								<c:forEach items="${supplierList}" var="supplier">
 								
@@ -86,8 +101,16 @@
 								</c:forEach>
 								
 							</form:select>
-							<form:label class="btn btn-default btn-block" path="Catid">Category</form:label>
-						<br>
+</div>
+</div>
+							  
+            <div class="row">
+            <div class="col-md-offset-3 col-sm-2 col-xs-6">
+							<form:label  path="Catid">Category</form:label>
+							</div>
+						
+						<div class="col-sm-4 col-xs-6">
+            
 						<form:select class="form-control" path="Catid" required="true">
 						
 								<c:forEach items="${categoryList}" var="category">
@@ -95,40 +118,22 @@
 									<form:option class="form-control" value="${category.id}">${category.categoryName}</form:option>
 								</c:forEach>
 							</form:select>
-					
+					</div>
 	</div>
+	  <div class="row">
+	  <div class="col-md-offset-2 col-sm-8 col-xs-6">
 	
-	
-	<!-- 
-	 <tr>
-                    <td>Pick file #1:</td>
-                    <td><input type="file" name="fileUpload" size="50" /></td>
-                </tr>
-	 -->						
-							<%--  <div class="row">
-                    <div class="col-md-offset-3 col-sm-2 col-xs-6">
-                        <form:label path="img" >image </form:label>
-                    </div>
-                    <div class="col-sm-4 col-xs-6">
-                        <form:input path="img" class="form-control" type="file"/>
-                    </div> --%>
+                <input class="btn-block" type="submit" name="action" value="Add" />
+				<input class="btn-block" type="submit" name="action" value="Edit" />
+				<input class="btn-block" type="submit" name="action" value="Delete" />
+				<input class="btn-block" type="submit" name="action" value="Search" />
                 </div>
-							
-    <!--             <div class="col-md-offset-5 col-sm-2">
-                    <button class="btn btn-primary btn-block" type="submit">SAVE</button>
-                </div>
-     -->    
-      <div class="row">
-                <input type="submit" name="action" value="Add" />
-				<input type="submit" name="action" value="Edit" />
-				<input type="submit" name="action" value="Delete" />
-				<input type="submit" name="action" value="Search" />
-                </div>
-         
-           
-</form:form> 
+    </div>     
+ 
 </div>
- </div>
+</div>   
+</form:form> 
+ 
     
     
      <br>
@@ -154,7 +159,7 @@
 			<td>${product.price}</td>
 			<td>${product.stock}</td>
 			<td><div class="thumbnail">
-			<img height="100px" width="100px" atl="${product.id}"
+			<img height="200px" width="200px" atl="${product.id}"
 			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
 			</div></td>
 			

@@ -2,6 +2,7 @@
 package com.spring.controller;
 
 import java.util.Collection;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.spring.model.Category;
 import com.spring.model.Product;
 import com.spring.model.Users;
+import com.spring.service.CategoryService;
 import com.spring.dao.CategoryDAO;
 import com.spring.dao.ProductDAO;
 import com.spring.dao.SupplierDAO;
@@ -37,13 +40,20 @@ public class RegistrationController {
 	@Autowired
 	SupplierDAO supplierDAO;
 	
+	@Autowired
+	CategoryService categoryService;
+	
 	
 	@Autowired
 	UserDAO userDAO;
 	
 	@RequestMapping(value="/")
-	public String landPage(@ModelAttribute("Users")Users users,BindingResult result,Model model)
-	{
+	public String landPage(Map<String, Object> map,@ModelAttribute("Users")Users users,BindingResult result,Model model)
+	{	
+		Category category = new Category();
+		map.put("category", category);
+		map.put("categoryList",categoryService.getAllCategory());
+
 		return "index";
 		
 	}
@@ -107,7 +117,13 @@ public class RegistrationController {
 		
 	}
 	 
-	
+	@RequestMapping(value="/index")
+	public String homePage(Model model)
+	{
+		model.addAttribute("users", new Users());
+		return "redirect:/";
+		
+	}
 	 
 	
 	@RequestMapping(value="/saveUser",method = RequestMethod.POST)

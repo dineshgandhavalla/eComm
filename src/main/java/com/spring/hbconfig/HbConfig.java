@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.spring.model.Cart;
 import com.spring.model.Category;
 import com.spring.model.Product;
 import com.spring.model.Supplier;
@@ -59,6 +60,7 @@ public class HbConfig {
 		sessionBuilder.addAnnotatedClasses(Category.class);
 		sessionBuilder.addAnnotatedClasses(Product.class);
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
+		sessionBuilder.addAnnotatedClasses(Cart.class);
 		System.out.println("Session");
 		
 		return sessionBuilder.buildSessionFactory();

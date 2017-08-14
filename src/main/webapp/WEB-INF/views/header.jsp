@@ -28,29 +28,28 @@ ${logout }
      <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="#"><img src="resources/assets/img/90a3d103aa1d8fc2bff6448dcd2edc53.svg" width="70px" id="logo"> N Bakes &amp; Cakes</a>
+                <a class="navbar-brand navbar-link" href="index"><img src="resources/assets/img/90a3d103aa1d8fc2bff6448dcd2edc53.svg" width="70px" id="logo"> N Bakes &amp; Cakes</a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" data-hover="dropdown">Menu<i class="glyphicon glyphicon-align-justify"></i> <span class="caret hidden"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a href="#">Cakes </a></li>
-                            <li role="presentation"><a href="#">Donuts </a></li>
-                            <li role="presentation"><a href="#">Cookies </a></li>
-                            <li role="presentation"><a href="#">Muffins </a></li>
-                            <li role="presentation"><a href="#">Desserts </a></li>
+                            <c:forEach items="${categoryList}" var="category">
+                            <li role="presentation"><a href="product${category.id}">${category.categoryName}</a></li>
+                        </c:forEach>
                         </ul>
                     </li>
                     <li class="active" role="presentation"><a href="#">Shop </a></li>
+                    <li role="presentation"><a href="signup">SignUp <i class="glyphicon glyphicon-user"></i></a></li>
                     <!--  <li role="presentation"><a href="admin">Admin </a></li>
                     
  -->
- 			 <sec:authorize access="!isAuthenticated()">                
+ 			<!--  <sec:authorize access="!isAuthenticated()">                
  	    <li role="presentation"><a href="login">Login <i class="glyphicon glyphicon-log-in"></i></a></li>
                     <li role="presentation"><a href="signup">SignUp <i class="glyphicon glyphicon-user"></i></a></li>
                     </sec:authorize>
-                   <%--  <sec:authorize access="isAuthenticated()">
+             -->       <%--  <sec:authorize access="isAuthenticated()">
                               <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
                               </sec:authorize> --%>
                 </ul>

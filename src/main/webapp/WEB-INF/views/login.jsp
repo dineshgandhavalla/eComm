@@ -21,10 +21,15 @@
 
 
 <body>
-<div     <c:import url="/WEB-INF/views/header.jsp" />>
+
+<div 
+   <c:import url="/WEB-INF/views/header.jsp" />>
+
 </div>
 
-	
+
+<br>
+<br>
 
     <div class="login-card"><img class="img-circle profile-img-card" src="resources/assets/img/rv_1-gito-1.jpg">
         <p class="profile-name-card"> </p>
@@ -44,7 +49,13 @@
 			${logout }
             </div>
         </form:form><a href="#" class="forgot-password">Forgot your password?</a></div>
-    <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
+        
+       <!--  <br>
+        <div 
+   <c:import url="/WEB-INF/views/footer.jsp" />>
+
+</div>
+ -->    <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
 </body>

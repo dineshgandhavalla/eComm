@@ -43,11 +43,13 @@ ${logout }
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" data-hover="dropdown">Menu<i class="glyphicon glyphicon-align-justify"></i> <span class="caret hidden"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li role="presentation"><a href="#">Cakes </a></li>
-                            <li role="presentation"><a href="#">Donuts </a></li>
+                        <c:forEach items="${categoryList}" var="category">
+                            <li role="presentation"><a href="product${category.id}">${category.categoryName}</a></li>
+                           <!--  <li role="presentation"><a href="#">Donuts </a></li>
                             <li role="presentation"><a href="#">Cookies </a></li>
                             <li role="presentation"><a href="#">Muffins </a></li>
-                            <li role="presentation"><a href="#">Desserts </a></li>
+                            <li role="presentation"><a href="#">Desserts </a></li> -->
+                            </c:forEach>
                         </ul>
                     </li>
                     <li class="active" role="presentation"><a href="#">Shop </a></li>

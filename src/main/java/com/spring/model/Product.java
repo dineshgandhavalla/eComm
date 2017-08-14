@@ -1,5 +1,7 @@
 package com.spring.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,13 +15,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name="Product_details")
-public class Product {
+public class Product implements Serializable{
 	@Id
 	@Column(name="pid")
 	@GeneratedValue 
-	private int id;
-	private String product_name,description,price,stock;
-	
+	private int id,price,stock;
+	private String product_name,description;
+
+	private int Catid;
+	private int Supid;
+
 	
 	
 	@ManyToOne
@@ -30,9 +35,9 @@ public class Product {
 	@JoinColumn(name="Supid", updatable = false, insertable = false, nullable = false)
 	private Supplier supplier;
 	
-	private int Catid;
-	private int Supid;
-
+	
+	
+	
 	@Transient
 	private MultipartFile image;
 	
@@ -81,19 +86,19 @@ public class Product {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getPrice() {
+	
+	public int getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
-	public String getStock() {
+	public int getStock() {
 		return stock;
 	}
-	public void setStock(String stock) {
+	public void setStock(int stock) {
 		this.stock = stock;
 	}
-	
 	public MultipartFile getImage() {
 		return image;
 	}

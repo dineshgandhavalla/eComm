@@ -45,5 +45,11 @@ public class ProductServiceImpl implements ProductService{
 		return productDAO.getAllProduct();
 	}
 
+	@Transactional
+	public List getProductByCategory(int Categoryid) {
+		// TODO Auto-generated method stub
+		return productDAO.getProductByCategory(Categoryid);
+	}
+
 	
 }

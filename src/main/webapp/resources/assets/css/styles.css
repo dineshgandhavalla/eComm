@@ -18,6 +18,11 @@ nav.navbar.navbar-inverse.navbar-fixed-top{
 i.glyphicon.glyphicon-align-justify{
   margin-left:5px;
 }
+
+div.carousel.slide{
+	width:50%;
+	margin: 0 AUTO;
+}
 .carousel-inner{
 	max-height:450px;
 	/* max-height:50%;
@@ -28,4 +33,5 @@ i.glyphicon.glyphicon-align-justify{
 }
 .navbar-fixed-bottom{
 	max-height:250px;
+	margin-top:50px;
 }

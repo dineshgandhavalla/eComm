@@ -14,6 +14,7 @@ public interface ProductDAO {
 	public void delete(int pid);
 	public Product getProduct(int pid);
 	public List getAllProduct();
+	public List getProductByCategory(int Categoryid);
 
 	public List<Product> list();
 

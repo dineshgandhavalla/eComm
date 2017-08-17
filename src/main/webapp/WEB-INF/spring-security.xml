@@ -30,6 +30,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<security:intercept-url pattern="/savesupplier/**" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/editsupplier/**" access="hasRole('ROLE_ADMIN')" />
 		<security:intercept-url pattern="/removesupplier/**" access="hasRole('ROLE_ADMIN')" />
+		<security:intercept-url pattern="/addToCart/**" access="hasRole('ROLE_USER')" />
 
 	<!-- 	<security:intercept-url pattern="/addtoCart/**" access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/viewcart/**" access="hasRole('ROLE_USER')" />
@@ -37,7 +38,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 		<security:intercept-url pattern="/deleteitem/**" access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/Payment/**" access="hasRole('ROLE_USER')" />
 		<security:intercept-url pattern="/placeorder/**" access="hasRole('ROLE_USER')" />
-		
+	
  -->
  <!-- <security:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')"/>
  -->

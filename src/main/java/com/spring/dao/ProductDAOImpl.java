@@ -55,7 +55,7 @@ public class ProductDAOImpl implements ProductDAO {
 		sessionFactory.getCurrentSession().delete(getProduct(pid));
 	}
 
-
+	@Transactional
 	public Product getProduct(int pid) {
 		// TODO Auto-generated method stub
 		return (Product)sessionFactory.getCurrentSession().get(Product.class, pid);

@@ -1,7 +1,12 @@
 package com.spring.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.spring.dao.CartDAO;
 import com.spring.dao.CartDAOImpl;
+import com.spring.dao.ProductDAO;
 import com.spring.model.Cart;
 import com.spring.model.Product;
 import com.spring.service.CartService;
@@ -23,8 +29,11 @@ public class HomeController {
 
 	@Autowired
 	ProductService productService;
-	@Autowired
+	/*@Autowired
 	CartDAO cartDAO;
+	
+	@Autowired
+	SessionFactory 	sessionFactory;*/
 	
 	@RequestMapping(value="/product{Categoryid}", method=RequestMethod.GET)
 	public String categoryList(@PathVariable ("Categoryid") int Categoryid , Map<String,Object> map , Model model)
@@ -35,20 +44,19 @@ public class HomeController {
 		return "ProductList";
 	}
 	
-	@RequestMapping(value=".../addtoCart/{Productid}", method=RequestMethod.POST)
-	public String addCart(@PathVariable("Productid") int Productid, Map<String,Object> map , Model model)
+/*	@RequestMapping(value=".../addtoCart/{Productid}/{price}", method=RequestMethod.POST)
+	public String addCart(@PathVariable("price") int price, @PathVariable("Productid") int Productid, Map<String,Object> map , Model model )
 	{
 		Cart cart= new Cart();
 		cart.setPid(Productid);
-		cartDAO.saveCart(cart);
-		
-		Product product = new Product();
 		map.put("cart", cart);
-		/*cart.setProdprice(cartDAO.getProdPrice(Productid));
-		*//*map.put("cartList", cartService.getCartByProduct(Productid));
-		*/
-	return "ProductList";
+		cart.setProdprice(price);
+		cartDAO.saveCart(cart);
+			
+	return "redirect:/";
 		
 	}
-	
-}
+		
+*/}
+
+

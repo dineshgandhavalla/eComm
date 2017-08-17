@@ -32,8 +32,104 @@ import com.spring.service.ProductService;
 
 @Controller
 public class ProductController {
+	
+	@Autowired
+	ProductDAO productDAO;
 
 	@Autowired
+	CategoryDAO categoryDAO;
+	@Autowired
+	SupplierDAO supplierDAO;
+	
+	private Path path;
+	
+
+/*	@RequestMapping(value="/productsave",method=RequestMethod.GET)
+	public String getProductPage(@ModelAttribute("product") Product product,Model model)
+	
+	{
+		model.addAttribute("categoryList", categoryDAO.list());
+		model.addAttribute("supplierList", supplierDAO.list());
+		model.addAttribute("product",new Product());
+		return "ProductSave";
+		
+	}
+	
+	
+	
+	@RequestMapping(value="/saveProduct",method=RequestMethod.POST)
+	public String insertProduct(@ModelAttribute("product") Product product,Model model)
+	{
+		productDAO.saveProduct(product);
+		return "redirect:/productsave";
+	   }
+	*/
+	
+	@Autowired
+	private ProductService productService;
+	
+	
+	   @RequestMapping(value="/product")
+		public String setupForm(Map<String, Object> map,Model model)
+		{
+		   Product product = new Product();
+			map.put("product", product);
+			map.put("productList",productService.getAllProduct());
+			model.addAttribute("categoryList", categoryDAO.list());
+			model.addAttribute("supplierList", supplierDAO.list());
+			return "Product";
+		}
+	
+	
+	@RequestMapping(value="/product.do", method=RequestMethod.POST)
+	public String doActions(RedirectAttributes attributes,HttpServletRequest request,@ModelAttribute ("product")Product product, BindingResult result, @RequestParam String action, Map<String, Object> map,Model model)
+            		throws Exception
+	{
+		Product productResult = new Product();
+		 if (action.equals("Add"))
+		 {
+			 productResult = product;
+			 MultipartFile file = product.getImage();
+				String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+		        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\"+product.getId()+".jpg");
+		        if (file != null && !file.isEmpty()) {
+		            try {
+		            	System.out.println("Image Saving Start");
+		            	file.transferTo(new File(path.toString()));
+		            	System.out.println("Image Saved");
+		            } catch (Exception e) {
+		                e.printStackTrace();
+		                System.out.println("Error");
+		                throw new RuntimeException("item image saving failed.", e);
+		            }
+		        }
+		        productService.add(product);
+		 }
+			 
+		 if (action.equals("Edit"))
+				 {
+			 productService.edit(product);
+			 productResult = product;
+			
+		 }
+		 if (action.equals("Delete")){
+			 productService.delete(product.getId());
+			 productResult = new Product();
+			
+		 }
+		 if (action.equals("Search")){
+			 Product searchedProduct = productService.getProduct(product.getId());
+			 productResult = searchedProduct!=null ? searchedProduct : new Product();
+			
+		}
+		map.put("product", productResult);
+		map.put("productList", productService.getAllProduct());
+		model.addAttribute("categoryList", categoryDAO.list());
+		model.addAttribute("supplierList", supplierDAO.list());
+		return "Product";
+	}
+
+/*	@Autowired
 	ProductDAO productDAO;
 	@Autowired
 	CategoryDAO categoryDAO;
@@ -59,7 +155,7 @@ public class ProductController {
 		return "Product";
 		
 	}
-/*	
+	
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
 	public String save(
 			@ModelAttribute("document") Document document,
@@ -88,20 +184,19 @@ public class ProductController {
 		}
 		
 		return "redirect:/index.html";
-	}*/
+	}
 	
 	@RequestMapping(value="/product.do", method=RequestMethod.POST)
-	public String doActions(RedirectAttributes attributes,HttpServletRequest request,@ModelAttribute Product product, BindingResult result, @RequestParam String action, Map<String, Object> map) throws IOException{
+	public String doActions(RedirectAttributes attributes,HttpServletRequest request,@ModelAttribute Product product, BindingResult result, @RequestParam String action, Map<String, Object> map) throws IOException
+	{
 		Product productResult = new Product();
 			//only in Java7 you can put String in switch
 		 if (action.equals("Add"))
 		 {
 			 productResult = product;
-			
 			MultipartFile file=product.getImage();
 			String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-	        path = Paths.get(rootDirectory + "\\WEB-INF\\images\\"+product.getId()+".jpg");
-	        
+	        path = Paths.get(rootDirectory + "\\resources\\images\\"+product.getId()+".jpg");
 	        if (file != null && !file.isEmpty()) 
 	        {
 	            try 
@@ -118,12 +213,12 @@ public class ProductController {
 	            }
 	        }
 	     
-			/*Blob blob = Hibernate.getLobCreator(sessionFactory.getCurrentSession()).createBlob((InputStream) product.getImg(),100000);
+			Blob blob = Hibernate.getLobCreator(sessionFactory.getCurrentSession()).createBlob((InputStream) product.getImg(),100000);
 
 			product.setImgname(product.getImgname());
 			product.setImg(blob);,@RequestParam("product") MultipartFile file
 			product.setImgtype(product.getImgtype());
-*/			
+			
 	        productService.add(product);
 	       
 	       
@@ -154,7 +249,7 @@ public class ProductController {
 	
 
 
-	/*@RequestMapping(value="/saveProduct",method = RequestMethod.POST)
+	@RequestMapping(value="/saveProduct",method = RequestMethod.POST)
 	public String addProduct(@ModelAttribute("product")Product product)
 	{
 			
@@ -164,6 +259,6 @@ public class ProductController {
 			return "redirect:/product";
 			
 		}
-	*/
-
+	
+*/
 }

@@ -33,14 +33,14 @@
                             <div class="col-md-12"><img atl="${product.id}"
 			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">></div>
                             <div class="col-md-12">
-                                <h4>DESCRIPTION</h4>
+                                <h4>${product.product_name}</h4>
                                 <p>
                                 <ul>
                                 <li> ${product.price}</li>
                                 <li> ${product.description}</li>
                                
                                 <li>
-                                <form:form action=".../addtoCart/${product.id}" method="POST">
+                                <form:form action="addToCart/${product.id}" method="POST">
                                 <input type="submit" value="Add to Cart" class="btn btn-primary">
                                 </form:form>
                                 </li>
@@ -53,6 +53,7 @@
                 
            </c:forEach>
         </div>
+        
         <%-- <div class="well">     
 		<table class ="table table-hover ">
 		<thead>

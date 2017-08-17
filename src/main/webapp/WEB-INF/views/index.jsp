@@ -52,7 +52,7 @@ ${logout }
                             </c:forEach>
                         </ul>
                     </li>
-                    <li class="active" role="presentation"><a href="#">Shop </a></li>
+                    <li class="active" role="presentation"><a href="cart">Shop </a></li>
                     <!--  <li role="presentation"><a href="admin">Admin </a></li>
                     
  -->

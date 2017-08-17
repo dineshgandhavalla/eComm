@@ -19,12 +19,14 @@ public class Product implements Serializable{
 	@Id
 	@Column(name="pid")
 	@GeneratedValue 
-	private int id,price,stock;
+	private int id;
 	private String product_name,description;
-
+	private int price,stock;
 	private int Catid;
 	private int Supid;
-
+	@Transient
+	private MultipartFile image;
+	
 	
 	
 	@ManyToOne
@@ -38,8 +40,6 @@ public class Product implements Serializable{
 	
 	
 	
-	@Transient
-	private MultipartFile image;
 	
 
 	public int getCatid() {
@@ -106,4 +106,6 @@ public class Product implements Serializable{
 		this.image = image;
 	}
 
+
+	
 }

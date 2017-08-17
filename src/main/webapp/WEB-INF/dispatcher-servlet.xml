@@ -24,14 +24,14 @@ xmlns="http://www.springframework.org/schema/beans">
 </bean>
 
 
-<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 
-<!-- setting maximum upload size -->
+		 <!-- setting maximum upload size -->
+		<property name="maxUploadSize" value="1000000000" />
 
-
-<property value="1000000000" name="maxUploadSize"/>
-
-</bean>
+	</bean>
+	 
 
 <!-- BeanNameViewResolver -->
 <bean id="downloadViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">

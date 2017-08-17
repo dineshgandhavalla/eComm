@@ -19,3 +19,19 @@ i.glyphicon.glyphicon-align-justify{
   margin-left:5px;
 }
 
+div.carousel.slide{
+	width:50%;
+	margin: 0 AUTO;
+}
+.carousel-inner{
+	max-height:450px;
+	/* max-height:50%;
+	 */}
+.item{
+	width: 100%; 
+	height: auto;
+}
+.navbar-fixed-bottom{
+	max-height:250px;
+	margin-top:50px;
+}

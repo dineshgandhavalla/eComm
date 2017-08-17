@@ -2,6 +2,7 @@ package com.spring.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,25 +15,16 @@ public class CartServiceImpl implements CartService {
 	@Autowired
 	CartDAO cartDAO;
 
-	public boolean saveCart(Cart cart) {
+	
+
+	public boolean saveProductToCart(Cart cart) {
 		// TODO Auto-generated method stub
-		return false;
+		return cartDAO.saveProductToCart(cart);
 	}
 
-	public List getAllCartDetails() {
+	public Cart getitem(int prodId, int userId) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<Cart> list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Transactional
-	public List getCartByProduct(int Productid) {
-		// TODO Auto-generated method stub
-		return cartDAO.getCartByProduct(Productid);
+		return cartDAO.getitem(prodId, userId);
 	}
 
 }

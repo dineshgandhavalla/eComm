@@ -1,6 +1,7 @@
 package com.spring.model;
 
 import java.util.HashSet;
+
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -12,21 +13,90 @@ import javax.persistence.Table;
 @Entity
 @Table(name="CART_DETAILS")
 public class Cart {
+	
 	@Id
 	@Column(name="Cartid")
 	@GeneratedValue
+	private int id;
+	
+	private int userid;
+	private String productname;
+	private double productprice;
+	private int quantity;
+	private String status;
+	private double subTotal;
+	private int productid;
+	
+	public int getProductid() {
+		return productid;
+	}
+	public void setProductid(int productid) {
+		this.productid = productid;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getUserid() {
+		return userid;
+	}
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
+	public String getProductname() {
+		return productname;
+	}
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
+	public double getProductprice() {
+		return productprice;
+	}
+	public void setProductprice(long productprice) {
+		this.productprice = productprice;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public double getSubTotal() {
+		return subTotal;
+	}
+	public void setSubTotal(double subTotal) {
+		this.subTotal = subTotal;
+	}
+	
+	
+}
+
+	
+	
+	
+	
+	/*@Id
+	@Column(name="Cartid")
+	@GeneratedValue
 	private int cartId;
-	int q=1;
 	private int quantity;
 	private float sumtotal;
 	private int pid;
 	private int prodprice;
-	/*
+	
 	@OneToMany(fetch=FetchType.EAGER)
 	@JoinColumn(name="pid", updatable = false, insertable = false, nullable = false)
 	private Product product;
 	private Set<Product> products = new HashSet<Product>(0);
-	*/
+	
 	
 	
 	public int getPid() {
@@ -41,7 +111,7 @@ public class Cart {
 	public void setPid(int pid) {
 		this.pid = pid;
 	}
-	/*public Product getProduct() {
+	public Product getProduct() {
 		return product;
 	}
 	public void setProduct(Product product) {
@@ -53,7 +123,7 @@ public class Cart {
 	public void setProducts(Set<Product> products) {
 		this.products = products;
 	}
-*/	public int getCartId() {
+	public int getCartId() {
 		return cartId;
 	}
 	public void setCartId(int cartId) {
@@ -69,11 +139,10 @@ public class Cart {
 		return sumtotal;
 	}
 	public void setSumtotal(float sumtotal) {
-		sumtotal= (q*(prodprice));
+	
 		this.sumtotal = sumtotal;
 	}
 
 	
 	
-}
-
+*/

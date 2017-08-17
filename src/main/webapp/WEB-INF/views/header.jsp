@@ -40,19 +40,19 @@ ${logout }
                         </c:forEach>
                         </ul>
                     </li>
-                    <li class="active" role="presentation"><a href="#">Shop </a></li>
-                    <li role="presentation"><a href="signup">SignUp <i class="glyphicon glyphicon-user"></i></a></li>
+                    <li class="active" role="presentation"><a href="cart">Shop </a></li>
+                   <li role="presentation"><a href="signup">SignUp <i class="glyphicon glyphicon-user"></i></a></li>
                     <!--  <li role="presentation"><a href="admin">Admin </a></li>
                     
- -->
- 			<!--  <sec:authorize access="!isAuthenticated()">                
+ --><%-- 
+ 			  <sec:authorize access="!isAuthenticated()">                
  	    <li role="presentation"><a href="login">Login <i class="glyphicon glyphicon-log-in"></i></a></li>
                     <li role="presentation"><a href="signup">SignUp <i class="glyphicon glyphicon-user"></i></a></li>
                     </sec:authorize>
-             -->       <%--  <sec:authorize access="isAuthenticated()">
+                     <sec:authorize access="isAuthenticated()">
                               <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
-                              </sec:authorize> --%>
-                </ul>
+                              </sec:authorize> 
+     --%>            </ul>
             </div>
         </div>
     </nav>

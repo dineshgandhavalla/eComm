@@ -53,7 +53,35 @@ public class CartDAOImpl implements CartDAO{
 
 		return listCart;
 	}
+	
+	@Transactional
+	public void editCart(int id) {
+		sessionFactory.getCurrentSession().saveOrUpdate(id);
+		
+		
+	}
+	
+	@Transactional
+	public void deleteCart(int id) {
+		// TODO Auto-generated method stub
 
+		sessionFactory.getCurrentSession().delete(getCart(id));
+	}
+
+	@SuppressWarnings("unchecked")
+	@Transactional
+	public Cart getCart(int id) {
+		
+		String hql = "from"+" Cart"+" where id="+id;
+		@SuppressWarnings("rawtypes")
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Cart> list = (List<Cart>) query.list();
+		if (list!= null && !list.isEmpty()) {
+			return list.get(0);
+		}
+		return null;
+		//return (Cart)sessionFactory.getCurrentSession().get(Cart.class, id);
+	}
 	
 	
 	/*@Autowired

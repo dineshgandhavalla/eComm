@@ -19,4 +19,7 @@ public boolean saveProductToCart(Cart cart);
 	public Cart getitem(int prodId,int userId);
 
 	public List<Cart> getAllCartDetails();
+	public void editCart(int id);
+	public void deleteCart(int id);
+	public Cart getCart(int id);
 }

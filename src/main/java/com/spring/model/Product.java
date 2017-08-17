@@ -17,7 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Table(name="Product_details")
 public class Product implements Serializable{
 	@Id
-	@Column(name="pid")
+	@Column(name="pid") 
 	@GeneratedValue 
 	private int id;
 	private String product_name,description;

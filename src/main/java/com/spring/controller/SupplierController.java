@@ -19,7 +19,7 @@ import com.spring.service.SupplierService;
 public class SupplierController {
 
 	@Autowired
-	SupplierDAO supplierDAO;
+	SupplierDAO supplierDAO; 
 	
 /*	@RequestMapping(value="/supplier")
 	public String supplierPage(Model model)

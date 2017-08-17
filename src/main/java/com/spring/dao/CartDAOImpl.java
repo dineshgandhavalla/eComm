@@ -17,7 +17,7 @@ import com.spring.model.Category;
 @SuppressWarnings("deprecation")
 @Repository
 public class CartDAOImpl implements CartDAO{
-
+ 
 
 	@Autowired
 	private SessionFactory sessionFactory;

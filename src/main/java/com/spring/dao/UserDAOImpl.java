@@ -18,7 +18,6 @@ public class UserDAOImpl implements UserDAO {
 	
 	
 	
-	
 	@Autowired
 	private SessionFactory sessionFactory;
 	

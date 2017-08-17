@@ -13,7 +13,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Supplier_details")
-public class Supplier {
+public class Supplier { 
 	@Id
 	@Column(name="Supid")
 	@GeneratedValue 

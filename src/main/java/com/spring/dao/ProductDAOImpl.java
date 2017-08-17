@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.model.Product;
 
-@Repository
+@Repository 
 public class ProductDAOImpl implements ProductDAO {
 
 	@Autowired

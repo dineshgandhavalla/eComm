@@ -29,7 +29,7 @@ import com.spring.dao.SupplierDAO;
 import com.spring.model.Category;
 import com.spring.model.Product;
 import com.spring.service.ProductService;
-
+ 
 @Controller
 public class ProductController {
 	

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CART_DETAILS")
+@Table(name="CART_DETAILS") 
 public class Cart {
 	
 	@Id

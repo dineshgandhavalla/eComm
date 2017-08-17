@@ -30,7 +30,7 @@ import com.spring.dao.SupplierDAO;
 import com.spring.dao.UserDAO;
 
 @Controller
-public class RegistrationController {
+public class RegistrationController { 
 
 
 	@Autowired

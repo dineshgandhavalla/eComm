@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.spring.model.Category;
 import com.spring.model.Product;
-
+ 
 public interface ProductDAO {
 
 	public boolean saveProduct(Product product);

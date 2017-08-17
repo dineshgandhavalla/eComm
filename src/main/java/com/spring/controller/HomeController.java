@@ -26,7 +26,7 @@ import com.spring.service.ProductService;
 
 @Controller
 public class HomeController {
-
+ 
 	@Autowired
 	ProductService productService;
 	/*@Autowired

@@ -6,7 +6,7 @@ import com.spring.model.Cart;
 
 public interface CartDAO {
 	/*public boolean saveCart(Cart cart);
-	//public Cart getCart(int Cartid);
+	//public Cart getCart(int Cartid); 
 	
 	public List getAllCartDetails();
 	public List<Cart> list() ;

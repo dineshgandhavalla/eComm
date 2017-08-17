@@ -9,7 +9,7 @@ import javax.persistence.Table;
 @Table(name="User_details")
 public class Users {
 	
-	@Id
+	@Id 
 	@GeneratedValue 
 	private int id;
 	private String name,email,address,role,password,contact_number,repeat_password;

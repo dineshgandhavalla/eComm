@@ -13,7 +13,7 @@ import com.spring.model.Category;
 @Repository
 public class CategoryDAOImpl implements CategoryDAO{
 
-
+ 
 	
 	@Autowired
 	private SessionFactory sessionFactory;

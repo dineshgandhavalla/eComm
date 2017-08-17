@@ -8,7 +8,7 @@
 </head>
 <body>
 <c:forEach items="${cartList}" var="cd">
-
+ 
             
                 <div class="col-md-4 col-md-offset-0">
                     <div>

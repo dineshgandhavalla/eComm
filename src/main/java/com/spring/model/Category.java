@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Category_details")
 public class Category {
-	@Id
+	@Id 
 	@Column(name="Catid")
 	@GeneratedValue 
 	private int id;

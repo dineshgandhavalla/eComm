@@ -49,6 +49,8 @@
 			
  <div class="container">
         <div class="well">     
+<c:forEach items="${cartList}" var="cd">
+
 		<table class ="table table-hover ">
 		<thead>
 		<tr>
@@ -67,7 +69,6 @@
 </thead>	
 <tbody>	
 
-<c:forEach items="${cartList}" var="cd">
 <form:form action="cart.do/${cd.id}" method="POST">
 		<tr>
 			<%-- <td>${cd.id}</td>
@@ -93,10 +94,13 @@
 			
 		</tr>
 		</form:form>
-	</c:forEach>
+	
 	</tbody>	
 	
 </table>
+<a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
+<a href="cardPay/${cd.userid}" class="btn btn-success" role="button">CheckOut</a>
+</c:forEach>
 </div>
 </div>
 

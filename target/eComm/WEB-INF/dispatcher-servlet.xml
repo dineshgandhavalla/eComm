@@ -31,15 +31,15 @@ xmlns="http://www.springframework.org/schema/beans">
 		<property name="maxUploadSize" value="1000000000" />
 
 	</bean>
-	 
+	 <!-- 
 
-<!-- BeanNameViewResolver -->
+BeanNameViewResolver
 <bean id="downloadViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
     <property name="order">
         <value>0</value>
     </property>
 </bean>
-<mvc:resources location="/resources/" mapping="/resources/**"/>
+ --><mvc:resources location="/resources/" mapping="/resources/**"/>
 
 <mvc:annotation-driven/>
 

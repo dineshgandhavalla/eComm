@@ -82,7 +82,7 @@
                     </div>
     		 
                <div class="col-sm-4 col-xs-6">
-              <form:input type="file" class=" btn btn-default btn-block form-control" path="image" />
+              <input type="file" class=" btn btn-default btn-block form-control" name="image" />
 				</div>
 	</div>
             

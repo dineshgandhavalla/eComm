@@ -22,4 +22,6 @@ public boolean saveProductToCart(Cart cart);
 	public void editCart(int id);
 	public void deleteCart(int id);
 	public Cart getCart(int id);
+	public List getAllCart();
+	public List getCartByUser(int userid);
 }

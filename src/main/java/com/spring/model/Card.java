@@ -13,16 +13,18 @@ public class Card {
 	@Column(name="Cardid")
 	@GeneratedValue
 	private int payid;
-	
+
+	private String card_name;
+	private int card_number;
+
 	private int card_userid;
+	
 	public int getCard_userid() {
 		return card_userid;
 	}
 	public void setCard_userid(int card_userid) {
 		this.card_userid = card_userid;
 	}
-	private String card_name;
-	private int card_number;
 	public int getPayid() {
 		return payid;
 	}

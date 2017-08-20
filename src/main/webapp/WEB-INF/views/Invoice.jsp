@@ -15,7 +15,7 @@
 
 </head>
 <body>
- <form modelAttribute="user" >
+ <form:form modelAttribute="user" commandName="user">
 <div class="container">
         <div class="well">
        
@@ -23,7 +23,7 @@
             
                 <div class="col-md-4">
                     <label>Name:${user.name} </label>
-                </div>
+                </div> 
             </div>
             <div class="row">
                 <div class="col-md-4">
@@ -43,10 +43,10 @@
             <hr>
         </div>
     </div>
-    
+    </form:form>
      <div class="container">
         <div class="well">     
-<c:forEach items="${cartList}" var="cd">
+
 
 		<table class ="table table-hover ">
 		<thead>
@@ -64,7 +64,7 @@
 </tr>
 </thead>	
 <tbody>	
-
+<c:forEach items="${cd}" var="cd">
 		<tr>
 			<%-- <td>${cd.id}</td>
 			 --%><td>${cd.productname}</td>
@@ -81,15 +81,15 @@
 			
 			
 		</tr>
-	
+</c:forEach>	
 	</tbody>	
 	
 </table>
 
-</c:forEach>
+
 	
 
-     <div class='form-control total btn btn-info'>
+     <div class='form-control'>
                   Total:
                   <span class='amount'>Rs.${total}</span>
                 </div>  
@@ -98,11 +98,11 @@
  </div>
  
 </div>
-</form>
+
  
- <form action="/">  
-       <a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
- </form>         
+ <form:form action="/">  
+       <button class="btn btn-danger">Continue Shopping</button>
+ </form:form>         
  
     <script src="<c:url value="/resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="/resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>

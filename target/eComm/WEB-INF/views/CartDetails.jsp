@@ -98,6 +98,7 @@
 	</tbody>	
 	
 </table>
+
 <a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
 <a href="cardPay/${cd.userid}" class="btn btn-success" role="button">CheckOut</a>
 </c:forEach>

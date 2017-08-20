@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spring.model.Cart;
 import com.spring.model.Users;
 
 
@@ -41,10 +42,17 @@ public List<Users> list() {
 		return null;
 	}
 
-	public Users getUserById(int user_id) {
-		
-		return null;
-	}
+@Transactional
+public Users getUser(int userid) {
+	// TODO Auto-generated method stub
+	return (Users)sessionFactory.getCurrentSession().get(Users.class, userid);
+}
+@Transactional
+public List getAllUser() {
+	// TODO Auto-generated method stub
+	return sessionFactory.getCurrentSession().createQuery("from Users").list();
+}
+
 
 	public void removeUserById(int user_id) {
 		
@@ -67,5 +75,23 @@ public List<Users> list() {
 		}
 
 	}
+
+/*@Transactional
+	public List<Users> getUserById(int user_id) {
+		// TODO Auto-generated method stub
+	@SuppressWarnings("unchecked")
+	List<Users> listUsers= (List<Users>) sessionFactory.getCurrentSession()
+			.createQuery("from Users where id="+user_id).list();
+		return listUsers;	}*/
+	
+	
+	@SuppressWarnings("unchecked")
+	@Transactional	
+	public List<Users> getUserById(int userid) {
+			
+			// TODO Auto-generated method stub
+			return (List<Users>) sessionFactory.getCurrentSession().createQuery("from Users where id="+userid).list();
+		}
+
 
 }

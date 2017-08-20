@@ -66,10 +66,11 @@ public class CartController {
     }
 
 	@RequestMapping("/cart")
-    public String CartDetails(Model model)   {
+    public String CartDetails(HttpSession session,Model model)   {
 		Cart cd = new Cart();
-		
-		model.addAttribute("cartList", cartDAO.getAllCartDetails());
+		int userId = (Integer) session.getAttribute("userid");
+	model.addAttribute("userid", userId);
+		model.addAttribute("cartList", cartDAO.getCartByUser(userId));
 		return "CartDetails";
     	
     }

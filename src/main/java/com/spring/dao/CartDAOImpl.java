@@ -82,7 +82,18 @@ public class CartDAOImpl implements CartDAO{
 		return null;
 		//return (Cart)sessionFactory.getCurrentSession().get(Cart.class, id);
 	}
-	
+	public List getAllCart() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+@Transactional	
+public List getCartByUser(int userid) {
+		
+		// TODO Auto-generated method stub
+		return sessionFactory.getCurrentSession().createQuery("from Cart where userid="+userid).list();
+	}
+
 	
 	/*@Autowired
 	SessionFactory sessionFactory;

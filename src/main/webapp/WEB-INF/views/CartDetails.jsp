@@ -14,6 +14,7 @@
 </head>
 <body>
 
+
 <%-- <c:forEach items="${cartList}" var="cd">
  
             
@@ -68,7 +69,6 @@
 </tr>
 </thead>	
 <tbody>	
-
 <form:form action="cart.do/${cd.id}" method="POST">
 		<tr>
 			<%-- <td>${cd.id}</td>
@@ -93,14 +93,17 @@
 			
 			
 		</tr>
-		</form:form>
-	
+		
+	</form:form>
 	</tbody>	
 	
 </table>
-<a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
-<a href="cardPay/${cd.userid}" class="btn btn-success" role="button">CheckOut</a>
 </c:forEach>
+
+<form:form  action="${userid}">
+<a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
+<button  class="btn btn-success" type="submit">CheckOut</button>
+</form:form>
 </div>
 </div>
 

@@ -23,7 +23,7 @@
 
 
 <div class="container">
-<div class="well well-lg">
+
 <c:forEach items="${prodList}" var="product">
 
             
@@ -83,7 +83,7 @@
 	
 </table>
 </div>
- --%></div>
+ --%>
 
 
 <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>

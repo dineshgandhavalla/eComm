@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Registration-Form.css"/>">
-    <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
-</head>
+    <%-- <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
+ --%></head>
 
 <body>
     <div class="row register-form">

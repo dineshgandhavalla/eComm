@@ -83,7 +83,31 @@ ${logout }
             <li data-target="#carousel-1" data-slide-to="2" class="active"></li>
         </ol>
     </div>
-    <footer class="navbar-fixed-bottom">
+    <br>
+    <h1> Exclusive deals</h1>
+    <br>
+     <div class="container-fluid">
+     <c:forEach items="${exclusive}" var="exclusive1">
+     
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div class="thumbnail"><img src="<c:url value="/resources/assets/img/Untitled design.jpg"/>">
+                    <div class="caption">
+                        <h3>${exclusive1.epname}</h3>
+                        <ul>
+                        <li>${exclusive1.epdescription}</li>
+                        <li>${exclusive1.eprice}</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            
+                </div></c:forEach>
+            </div>
+        
+    
+    <footer class="navbar">
         <div class="row">
             <div class="col-md-4 col-sm-6 footer-navigation">
                 <h3 class="text-center"> N Bakes &amp; Cakes</h3>

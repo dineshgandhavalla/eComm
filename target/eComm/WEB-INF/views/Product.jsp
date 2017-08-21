@@ -43,9 +43,20 @@
     <div class="container">
         <div class="well">
             <form:form method="POST" action="product.do" encode="multipart/form-data" modelAttribute="product">
+                
+                    <div class="row">
+                    <div class="col-md-offset-3 col-sm-2 col-xs-6">
+                        <form:label path="id" >Product Id </form:label>
+                    </div>
+                    <div class="col-sm-4 col-xs-6">
+                        <form:input path="id" class="form-control" type="text"/>
+                    </div>
+                </div>
+            
+                
                 <div class="row">
                     <div class="col-md-offset-3 col-sm-2 col-xs-6">
-                        <form:label path="product_name" >Productname </form:label>
+                        <form:label path="product_name" >Product Name </form:label>
                     </div>
                     <div class="col-sm-4 col-xs-6">
                         <form:input path="product_name" class="form-control" type="text"/>
@@ -129,10 +140,11 @@
 				<input class="btn-block" type="submit" name="action" value="Search" />
                 </div>
     </div>     
- 
+ </form:form>
 </div>
+
 </div>   
-</form:form> 
+
  
     
     

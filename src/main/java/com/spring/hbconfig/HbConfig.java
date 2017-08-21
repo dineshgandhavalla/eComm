@@ -19,6 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import com.spring.model.Card;
 import com.spring.model.Cart;
 import com.spring.model.Category;
+import com.spring.model.Exclusive;
 import com.spring.model.Product;
 import com.spring.model.Supplier;
 import com.spring.model.Users;
@@ -63,6 +64,8 @@ public class HbConfig {
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.addAnnotatedClasses(Cart.class);
 		sessionBuilder.addAnnotatedClasses(Card.class);
+
+		sessionBuilder.addAnnotatedClasses(Exclusive.class);
 
 		System.out.println("Session");
 		

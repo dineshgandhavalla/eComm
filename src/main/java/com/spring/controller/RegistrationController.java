@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import java.util.Map;
 
+import javax.persistence.ManyToOne;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -23,10 +24,13 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.model.Category;
+import com.spring.model.Exclusive;
 import com.spring.model.Product;
 import com.spring.model.Users;
 import com.spring.service.CategoryService;
+import com.spring.service.ExclusiveService;
 import com.spring.dao.CategoryDAO;
+import com.spring.dao.ExclusiveDAO;
 import com.spring.dao.ProductDAO;
 import com.spring.dao.SupplierDAO;
 import com.spring.dao.UserDAO;
@@ -46,6 +50,13 @@ public class RegistrationController {
 	@Autowired
 	CategoryService categoryService;
 	
+	@Autowired
+	ExclusiveService exclusiveService;
+	
+
+	@Autowired
+	ExclusiveDAO exclusiveDAO;
+	
 	
 	@Autowired
 	UserDAO userDAO;
@@ -56,6 +67,8 @@ public class RegistrationController {
 		Category category = new Category();
 		map.put("category", category);
 		map.put("categoryList",categoryService.getAllCategory());
+		model.addAttribute("exclusive",exclusiveService.getAllExclusive());
+		
 
 		return "index";
 		

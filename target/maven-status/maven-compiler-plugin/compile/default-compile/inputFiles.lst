@@ -1,7 +1,9 @@
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CategoryDAO.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CheckOutDAO.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\ExclusiveService.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\SupplierServiceImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CartDAOImpl.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\ExclusiveDAO.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\CategoryServiceImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\ProductDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\CartController.java
@@ -9,6 +11,7 @@ E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\SupplierContr
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Supplier.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CheckOutDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Card.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Exclusive.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\CategoryController.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\CartServiceImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\ProductServiceImpl.java
@@ -27,10 +30,13 @@ E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Category.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\CheckOutController.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CategoryDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\CartService.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\ExclusiveController.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CartDAO.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\ExclusiveDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Users.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\RegistrationController.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\UserDAO.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\UserDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\SupplierService.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\ProductDAO.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\ExclusiveServiceImpl.java

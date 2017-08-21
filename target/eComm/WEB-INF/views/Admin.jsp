@@ -338,8 +338,8 @@
                     <li role="presentation"><a href="category">Category </a></li>
                     <li role="presentation"><a href="product">Product </a></li>
                     <li role="presentation"><a href="supplier">Supplier </a></li>
-                   
-                    <!--  <li role="presentation"><a href="data">Data </a></li> -->
+                   <li role="presentation"><a href="exclusive">Exclusive Deals </a></li>
+                    
                 </ul>
                  <ul class="nav navbar-nav navbar-right">
                  <sec:authorize access="isAuthenticated()">

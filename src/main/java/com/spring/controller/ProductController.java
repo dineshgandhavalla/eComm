@@ -44,26 +44,6 @@ public class ProductController {
 	private Path path;
 	
 
-/*	@RequestMapping(value="/productsave",method=RequestMethod.GET)
-	public String getProductPage(@ModelAttribute("product") Product product,Model model)
-	
-	{
-		model.addAttribute("categoryList", categoryDAO.list());
-		model.addAttribute("supplierList", supplierDAO.list());
-		model.addAttribute("product",new Product());
-		return "ProductSave";
-		
-	}
-	
-	
-	
-	@RequestMapping(value="/saveProduct",method=RequestMethod.POST)
-	public String insertProduct(@ModelAttribute("product") Product product,Model model)
-	{
-		productDAO.saveProduct(product);
-		return "redirect:/productsave";
-	   }
-	*/
 	
 	@Autowired
 	private ProductService productService;

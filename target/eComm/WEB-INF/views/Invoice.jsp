@@ -15,7 +15,8 @@
 
 </head>
 <body>
- <form modelAttribute="user" >
+<div id= "printableArea">
+ <form:form modelAttribute="user" commandName="user">
 <div class="container">
         <div class="well">
        
@@ -23,7 +24,7 @@
             
                 <div class="col-md-4">
                     <label>Name:${user.name} </label>
-                </div>
+                </div> 
             </div>
             <div class="row">
                 <div class="col-md-4">
@@ -37,16 +38,16 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label>Shipping Address:${user.contact_number} </label>
+                    <label>Shipping Address:${user.address} </label>
                 </div>
             </div>
             <hr>
         </div>
     </div>
-    
+    </form:form>
      <div class="container">
         <div class="well">     
-<c:forEach items="${cartList}" var="cd">
+
 
 		<table class ="table table-hover ">
 		<thead>
@@ -64,7 +65,7 @@
 </tr>
 </thead>	
 <tbody>	
-
+<c:forEach items="${cd}" var="cd">
 		<tr>
 			<%-- <td>${cd.id}</td>
 			 --%><td>${cd.productname}</td>
@@ -81,15 +82,15 @@
 			
 			
 		</tr>
-	
+</c:forEach>	
 	</tbody>	
 	
 </table>
 
-</c:forEach>
+
 	
 
-     <div class='form-control total btn btn-info'>
+     <div class='form-control'>
                   Total:
                   <span class='amount'>Rs.${total}</span>
                 </div>  
@@ -98,12 +99,19 @@
  </div>
  
 </div>
-</form>
- 
- <form action="/">  
+</div>
+<div class="row">
+<div class="col-md-offset-2 col-md-2">
+<button class="btn btn-info" onclick="printDiv('printableArea')">Print Invoice</button>
+</div>
+<div class="col-md-4"></div>
+
+       <!-- <button class="btn btn-danger">Continue Shopping</button> -->
        <a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
- </form>         
- 
+     
+ </div>
+ 	<script src="<c:url value="/resources/assets/js/print.js"/>"></script>
+    
     <script src="<c:url value="/resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="/resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
 

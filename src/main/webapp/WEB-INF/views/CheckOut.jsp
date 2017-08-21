@@ -100,6 +100,12 @@
                     <h4 class="modal-title">Cash On Delivery</h4></div>
                 <div class="modal-body">
                     <p>A Shipping Charge of <Strong>Rs.99/-</Strong> is applicable for Cash on Delivery</p>
+                    <div class="col-xs-offset-2 col-xs-12">
+             <div class="form-group">
+                 <label class="control-label" for="total"><h3><strong>Grand Total : ${total} + ${cod}</strong></h3></label>
+                </div>
+                </div>                    
+        
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>

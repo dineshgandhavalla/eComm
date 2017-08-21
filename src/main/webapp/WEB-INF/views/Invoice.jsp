@@ -15,6 +15,7 @@
 
 </head>
 <body>
+<div id= "printableArea">
  <form:form modelAttribute="user" commandName="user">
 <div class="container">
         <div class="well">
@@ -37,7 +38,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <label>Shipping Address:${user.contact_number} </label>
+                    <label>Shipping Address:${user.address} </label>
                 </div>
             </div>
             <hr>
@@ -98,12 +99,19 @@
  </div>
  
 </div>
+</div>
+<div class="row">
+<div class="col-md-offset-2 col-md-2">
+<button class="btn btn-info" onclick="printDiv('printableArea')">Print Invoice</button>
+</div>
+<div class="col-md-4"></div>
 
- 
- <form:form action="/">  
-       <button class="btn btn-danger">Continue Shopping</button>
- </form:form>         
- 
+       <!-- <button class="btn btn-danger">Continue Shopping</button> -->
+       <a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
+     
+ </div>
+ 	<script src="<c:url value="/resources/assets/js/print.js"/>"></script>
+    
     <script src="<c:url value="/resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="/resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
 

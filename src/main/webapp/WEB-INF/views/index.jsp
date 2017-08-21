@@ -83,7 +83,7 @@ ${logout }
             <li data-target="#carousel-1" data-slide-to="2" class="active"></li>
         </ol>
     </div>
-    <footer class="navbar-fixed-bottom">
+    <footer class="navbar">
         <div class="row">
             <div class="col-md-4 col-sm-6 footer-navigation">
                 <h3 class="text-center"> N Bakes &amp; Cakes</h3>

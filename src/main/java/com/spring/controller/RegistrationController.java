@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.model.Category;
@@ -128,14 +130,20 @@ public class RegistrationController {
 	 
 	
 	@RequestMapping(value="/saveUser",method = RequestMethod.POST)
-public String addUser(@ModelAttribute("users")Users users)
+public ModelAndView addUser(@Valid @ModelAttribute("users")Users users ,BindingResult result)
 {
+		if(result.hasErrors())
+		{	
+			ModelAndView model = new ModelAndView("Signup");
+			return model;
+		}
 		
 		users.setRole("ROLE_USER");
 		users.setEnabled(true);
 		userDAO.saveUser(users);
-		
-		return "redirect:/";
+		ModelAndView model = new ModelAndView("index");
+				
+		return model;
 		
 	}
 	

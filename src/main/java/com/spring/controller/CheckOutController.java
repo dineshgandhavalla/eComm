@@ -1,5 +1,7 @@
 package com.spring.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -62,13 +64,15 @@ public class CheckOutController {
 	@RequestMapping(value="/invoice",method=RequestMethod.POST)
 	public String InvoicePage(@ModelAttribute ("card") Card card,HttpSession session, Model model){
 		//Card cardPay = new Card();
+		int charges=99;
 		int userId = (Integer) session.getAttribute("userid");
 		card.setCard_userid(userId);
 		cardDAO.saveCard(card);
+	
 		model.addAttribute("user", userDAO.getUser(userId));
     	model.addAttribute("cd", cartDAO.getCartByUser(userId));
-    	model.addAttribute("total", checkOutDAO.getTotal(userId));
-		
+    	model.addAttribute("total",checkOutDAO.getTotal(userId));
+		model.addAttribute("cod", charges);
 		
 		return "Invoice";
 	

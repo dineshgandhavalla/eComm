@@ -24,7 +24,6 @@
 
 <div 
    <c:import url="/WEB-INF/views/header.jsp" />>
-
 </div>
 
 
@@ -55,7 +54,13 @@
    <c:import url="/WEB-INF/views/footer.jsp" />>
 
 </div>
- -->    <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
+
+ -->
+<div 
+   <c:import url="/WEB-INF/views/footer.jsp" />>
+</div>
+
+    <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
 </body>

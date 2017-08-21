@@ -19,6 +19,12 @@
  --%></head>
 
 <body>
+
+<div 
+   <c:import url="/WEB-INF/views/header.jsp" />>
+</div>
+
+
     <div class="row register-form">
         <div class="col-md-8 col-md-offset-2">
             <form:form class="form-horizontal custom-form"  method="POST" action="saveUser" modelAttribute="users">
@@ -71,6 +77,11 @@
             </form:form>
         </div>
     </div>
+   <br>
+   <div 
+   <c:import url="/WEB-INF/views/footer.jsp" />>
+</div> 
+    
     <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>

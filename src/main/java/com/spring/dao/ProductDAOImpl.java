@@ -2,7 +2,10 @@ package com.spring.dao;
 
 import java.util.List;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -67,10 +70,24 @@ public class ProductDAOImpl implements ProductDAO {
 		return sessionFactory.getCurrentSession().createQuery("from Product").list();
 	}
 
-
+		
 	public List getProductByCategory(int Categoryid) {
 		// TODO Auto-generated method stub
 		return sessionFactory.getCurrentSession().createQuery("from Product where Catid="+Categoryid).list();
 	}
+	
+	public SQLQuery getCatid(){
+		
+		NativeQuery value=sessionFactory.getCurrentSession().createSQLQuery("select catid from Category where Categoryname='exclusive category'");
+		return value;
+		
+	}
+	
+	@SuppressWarnings("deprecation")
+	@Transactional
+	public List getExclusivebyCategory(int Categoryid){
+		return sessionFactory.getCurrentSession().createSQLQuery("select pid from Product where Catid="+Categoryid+"order by rand()").list();
 
+		
+	}
 }

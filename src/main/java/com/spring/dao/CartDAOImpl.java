@@ -2,6 +2,7 @@ package com.spring.dao;
 
 import java.util.List;
 
+
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Projections;
@@ -95,42 +96,4 @@ public List getCartByUser(int userid) {
 	}
 
 	
-	/*@Autowired
-	SessionFactory sessionFactory;
-	
-	public CartDAOImpl(SessionFactory sessionFactory)
-	{
-		this.sessionFactory=sessionFactory; 
-		
-	}
-
-	@Transactional
-	public boolean saveCart(Cart cart) {
-		int q=1;
-		cart.setQuantity(q);
-		cart.setSumtotal(q*(cart.getProdprice()));
-		 List<Cart> cartList = (List<Cart>) sessionFactory.getAttribute("cart");
-			
-		sessionFactory.getCurrentSession().saveOrUpdate(cart);
-		return true;
-	}
-
-	public List getAllCartDetails() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List<Cart> list() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public List getCartByProduct(int Productid) {
-		
-		// TODO Auto-generated method stub
-		return sessionFactory.getCurrentSession().createQuery("from Product where id="+Productid).list();
-	}
-
-	
-
-*/}
+}	

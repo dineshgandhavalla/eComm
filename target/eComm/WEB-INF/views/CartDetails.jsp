@@ -84,17 +84,10 @@
 			<input class="btn-block" type="submit" name="action" value="Edit" />
 				<input class="btn-block" type="submit" name="action" value="Delete" />
 				</td>
-				
-			
-			<%-- <td><div class="thumbnail">
-			<img height="200px" width="200px" atl="${product.id}"
-			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
-			</div></td> --%>
-			
-			
 		</tr>
 		
 	</form:form>
+
 	</tbody>	
 	
 </table>

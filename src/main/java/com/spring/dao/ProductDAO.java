@@ -15,7 +15,7 @@ public interface ProductDAO {
 	public Product getProduct(int pid);
 	public List getAllProduct();
 	public List getProductByCategory(int Categoryid);
-
+	public List getExclusivebyCategory(int Categoryid);
 	public List<Product> list();
 
 }

@@ -1,7 +1,9 @@
 .login-card{
   max-width:350px;
   padding:40px 40px;
-  background-color:rgba(125,192,207,0.75);
+  /* background-color:rgba(125,192,207,0.75); */
+ /*   background-color:rgba(255,255,255,0.75); */
+ background-color:rgba(248,205,174,0.75);
   margin:0 auto 25px;
   margin-top:50px;
   border-radius:2px;
@@ -65,7 +67,7 @@
   height:36px;
   line-height:36px;
   font-size:14px;
-  background:rgb(255,197,84);
+  background:rgb(90,25,3);/* rgb(255,197,84); */
   border-radius:3px;
   border:none;
   transition:all 0.218s;
@@ -73,7 +75,7 @@
 }
 
 .login-card .btn.btn-signin:hover, .login-card .btn.btn-signin:active, .login-card .btn.btn-signin:focus{
-  background:rgb(12,97,33);
+  background:rgb(127,190,193);/* rgb(12,97,33); */
 }
 
 .login-card .forgot-password{
@@ -87,7 +89,7 @@
 }
 
 body{
-   background-image:url(../../assets/img/muffins_cream_dessert_gritting_106752_2508x1672.jpg);
+   background-image:url(../../assets/img/pexels-photo-206130.jpeg);
   /* 
   background-image:url(../../assets/img/1086_donuts.jpg); */
 }

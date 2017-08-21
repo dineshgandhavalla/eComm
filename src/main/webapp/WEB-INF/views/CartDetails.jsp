@@ -88,29 +88,6 @@
 		
 	</form:form>
 
-
-<form:form action="excart.do/${cd.id}" method="POST">
-		<tr>
-			<%-- <td>${cd.id}</td>
-			 --%><td>${cd.productname}</td>
-
-			<td>${cd.productprice}</td>
-			<td>
-			<input  class="form-control" type="text" name="quantity" value="1"></input>
-                 </td>
-                 <td>${cd.quantity}</td>
-			<td>${cd.subTotal}</td>
-			<td>
-			<input class="btn-block" type="submit" name="action" value="Edit" />
-				<input class="btn-block" type="submit" name="action" value="Delete" />
-				</td>
-		</tr>
-		
-	</form:form>
-
-
-
-
 	</tbody>	
 	
 </table>

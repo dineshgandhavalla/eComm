@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
- <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -22,20 +22,7 @@
 <body>
 ${error}
 ${logout }
-   <!--  <div class="btn-group">
-        <button class="btn btn-default" type="button">Button </button>
-        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><span class="caret"></span></button>
-        <ul class="dropdown-menu" role="menu">
-            <li role="presentation"><a href="#">First Item</a></li>
-            <li role="presentation"><a href="#">Second Item</a></li>
-            <li role="presentation"><a href="#">Third Item</a></li>
-        </ul>
-    </div>
-    <div class="btn-group" role="group">
-        <button class="btn btn-default" type="button">Button 1</button>
-        <button class="btn btn-default" type="button">Button 2</button>
-    </div>
-    --> <nav class="navbar navbar-inverse navbar-fixed-top">
+   <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand navbar-link" href="#"><img src="resources/assets/img/90a3d103aa1d8fc2bff6448dcd2edc53.svg" width="70px" id="logo"> N Bakes &amp; Cakes</a>
@@ -47,51 +34,52 @@ ${logout }
                         <ul class="dropdown-menu" role="menu">
                         <c:forEach items="${categoryList}" var="category">
                             <li role="presentation"><a href="product${category.id}">${category.categoryName}</a></li>
-                           <!--  <li role="presentation"><a href="#">Donuts </a></li>
-                            <li role="presentation"><a href="#">Cookies </a></li>
-                            <li role="presentation"><a href="#">Muffins </a></li>
-                            <li role="presentation"><a href="#">Desserts </a></li> -->
                             </c:forEach>
                         </ul>
                     </li>
-                    <!--  <li role="presentation"><a href="admin">Admin </a></li>
-                    
- -->
+
  			 <sec:authorize access="!isAuthenticated()">                
- 	    <li role="presentation"><a href="login">Login <i class="glyphicon glyphicon-log-in"></i></a></li>
+ 	    			<li role="presentation"><a href="login">Login <i class="glyphicon glyphicon-log-in"></i></a></li>
                     <li role="presentation"><a href="signup">SignUp <i class="glyphicon glyphicon-user"></i></a></li>
-                    </sec:authorize>
-                    <sec:authorize access="isAuthenticated()">
-                  				  <li class="active" role="presentation"><a href="cart">Shop </a></li>
-                  
-                              <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
-                              </sec:authorize>
+             </sec:authorize>
+            
+             <sec:authorize access="isAuthenticated()">
+            		  <li class="active" role="presentation"><a href="cart">Shop<i class="glyphicon glyphicon-shopping-cart"></i></a></li>
+                      <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
+             </sec:authorize>
+
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="carousel slide" data-ride="carousel" id="carousel-1">
-        <div class="carousel-inner" role="listbox">
-            <div class="item"><img class="img-responsive" src="resources/assets/img/thumb-1920-417990.jpg" alt="Slide Image" width="100%" max-width="200px" height="200px" ></div>
-            <div class="item"><img src="resources/assets/img/thumb-1920-772586.jpg" alt="Slide Image"></div>
-            <div class="item active"><img src="resources/assets/img/gq1khg1ullp31lkyimxg.jpg" alt="Slide Image" width="1400" height="100"></div>
+<!--End of Navbar (header) -->
+    
+   <div class="carousel slide" data-ride="carousel" id="carousel-1">
+      <div class="carousel-inner" role="listbox">
+            <div class="item"><img class="img-responsive" src="resources/assets/img/pexels-photo-227432.jpeg" alt="Slide Image" ></div>
+            <div class="item"><img src="resources/assets/img/chocolate-sweet.jpg" alt="Slide Image" ></div>
+            <div class="item active"><img src="resources/assets/img/gq1khg1ullp31lkyimxg.jpg" alt="Slide Image" ></div>
         </div>
-        <div><a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
-            <a class="right carousel-control" href="#carousel-1" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
+        
+        <div>
+        <a class="left carousel-control" href="#carousel-1" role="button" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i><span class="sr-only">Previous</span></a>
+        <a class="right carousel-control" href="#carousel-1" role="button" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i><span class="sr-only">Next</span></a>
         </div>
+        
         <ol class="carousel-indicators">
             <li data-target="#carousel-1" data-slide-to="0"></li>
             <li data-target="#carousel-1" data-slide-to="1"></li>
             <li data-target="#carousel-1" data-slide-to="2" class="active"></li>
         </ol>
     </div>
+    <!-- End of Carousels --> 
     <br>
-    <h1> Exclusive deals</h1>
+     <div>
+        <h1 class="text-center text-info">Exclusive Deals<i class="glyphicon glyphicon-tags"></i></h1>
+	</div>
     <br>
      <div class="container-fluid">
-    
         <div class="row">
-         <c:forEach items="${exclusive}" var="exclusive1">
      
             <div class="col-md-4 col-sm-4">
                 <div class="thumbnail"><img src="<c:url value="/resources/assets/img/Untitled design.jpg"/>">
@@ -101,16 +89,14 @@ ${logout }
                         <li>${exclusive1.epdescription}</li>
                         <li>${exclusive1.eprice}</li>
                         
-    <form:form action="exclusiveCart/${exclusive1.exid}" method="POST">
                                 <input type="submit" value="Add to Cart" class="btn btn-primary">
-                                </form:form>
                                 
                         </ul>
                     </div>
                 </div>
                 
             </div>
-            </c:forEach>
+         
                 </div>
             </div>
         

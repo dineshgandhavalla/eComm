@@ -26,6 +26,13 @@ public class Cart {
 	private String status;
 	private double subTotal;
 	private int productid;
+	private int exproid;
+	public int getExproid() {
+		return exproid;
+	}
+	public void setExproid(int exproid) {
+		this.exproid = exproid;
+	}
 	/*private int cod;
 	public int getCod() {
 		return cod;

@@ -2,6 +2,7 @@ package com.spring.hbconfig;
 
 import java.util.Properties;
 
+
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -13,13 +14,12 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.spring.model.Card;
 import com.spring.model.Cart;
 import com.spring.model.Category;
-import com.spring.model.Exclusive;
+
 import com.spring.model.Product;
 import com.spring.model.Supplier;
 import com.spring.model.Users;
@@ -65,7 +65,7 @@ public class HbConfig {
 		sessionBuilder.addAnnotatedClasses(Cart.class);
 		sessionBuilder.addAnnotatedClasses(Card.class);
 
-		sessionBuilder.addAnnotatedClasses(Exclusive.class);
+		
 
 		System.out.println("Session");
 		

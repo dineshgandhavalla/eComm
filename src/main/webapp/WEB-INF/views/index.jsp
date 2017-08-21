@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+ <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -87,9 +89,10 @@ ${logout }
     <h1> Exclusive deals</h1>
     <br>
      <div class="container-fluid">
-     <c:forEach items="${exclusive}" var="exclusive1">
-     
+    
         <div class="row">
+         <c:forEach items="${exclusive}" var="exclusive1">
+     
             <div class="col-md-4 col-sm-4">
                 <div class="thumbnail"><img src="<c:url value="/resources/assets/img/Untitled design.jpg"/>">
                     <div class="caption">
@@ -97,13 +100,18 @@ ${logout }
                         <ul>
                         <li>${exclusive1.epdescription}</li>
                         <li>${exclusive1.eprice}</li>
+                        
+    <form:form action="exclusiveCart/${exclusive1.exid}" method="POST">
+                                <input type="submit" value="Add to Cart" class="btn btn-primary">
+                                </form:form>
+                                
                         </ul>
                     </div>
                 </div>
                 
             </div>
-            
-                </div></c:forEach>
+            </c:forEach>
+                </div>
             </div>
         
     

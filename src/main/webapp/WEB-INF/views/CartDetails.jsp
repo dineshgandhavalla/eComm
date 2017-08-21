@@ -7,101 +7,81 @@
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart Details</title>
-    <link rel="stylesheet" href="<c:url value="resources/assets/bootstrap/css/bootstrap.min.css"/>">
-    <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
-    <link rel="stylesheet" href="<c:url value="resources/assets/css/category.css"/>">
-
+   <%--  <link rel="stylesheet" href="<c:url value="resources/assets/bootstrap/css/bootstrap.min.css"/>">
+    --%> <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
+   <link rel="stylesheet" href="<c:url value="resources/assets/css/category.css"/>">
+	<%-- <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
+	 --%><link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
+    <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Registration-Form.css"/>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+ 
+<style>
+.well{
+background-color:rgba(248,205,174,0.75);
+ 
+}
+</style>   
 </head>
 <body>
 
+<div 
+   <c:import url="/WEB-INF/views/header.jsp" />>
+</div>
 
-<%-- <c:forEach items="${cartList}" var="cd">
- 
-            
-                <div class="col-md-4 col-md-offset-0">
-                    <div>
-                        <div class="row">
-                            <div class="col-md-12"><img atl="${cd.id}"
-			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">></div>
-                            <div class="col-md-12">
-                                <h4>${cd.id}</h4>
-                                <p>
-                                <ul>
-                                <li> ${cd.productname}</li>
-                                <li> ${cd.subTotal}</li>
-                               
-                                <li>
-                                <form:form action="addToCart/${product.id}" method="POST">
-                                <input type="submit" value="Add to Cart" class="btn btn-primary">
-                                </form:form>
-                                </li>
-                                </ul></p>
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-                
-           </c:forEach>
-        </div>
+<br>
 
- --%>
- 
-			
  <div class="container">
         <div class="well">     
-<c:forEach items="${cartList}" var="cd">
-
 		<table class ="table table-hover ">
-		<thead>
+<thead>
 		<tr>
-	
-	<!-- <th>image</th>
-	
-	 --><th>Product name</th>
+	<th>Product name</th>
 	<th>product price</th>
 	<th>Quantity</th>
 	<th>updated Quantity</th>
 	<th>SubTotal</th>
 	<th>Options</th>
-	
-	
-</tr>
+		</tr>
 </thead>	
+
 <tbody>	
+<c:forEach items="${cartList}" var="cd">
+
 <form:form action="cart.do/${cd.id}" method="POST">
 		<tr>
-			<%-- <td>${cd.id}</td>
-			 --%><td>${cd.productname}</td>
-
+			<td>${cd.productname}</td>
 			<td>${cd.productprice}</td>
 			<td>
 			<input  class="form-control" type="text" name="quantity" value="1"></input>
-                 </td>
-                 <td>${cd.quantity}</td>
+            </td>
+            <td>${cd.quantity}</td>
 			<td>${cd.subTotal}</td>
 			<td>
 			<input class="btn-block" type="submit" name="action" value="Edit" />
-				<input class="btn-block" type="submit" name="action" value="Delete" />
-				</td>
+			<input class="btn-block" type="submit" name="action" value="Delete" />
+			</td>
 		</tr>
-		
-	</form:form>
-
-	</tbody>	
+</form:form>
+</c:forEach>
+</tbody>	
 	
 </table>
-</c:forEach>
+
 
 <form:form  action="${userid}">
-<a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
-<button  class="btn btn-success" type="submit">CheckOut</button>
+	<a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
+	<button  class="btn btn-success" type="submit">CheckOut</button>
 </form:form>
+
 </div>
+</div>
+
+<div 
+   <c:import url="/WEB-INF/views/footer.jsp" />>
 </div>
 
 <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
-    <script src="<c:url value="resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
+<script src="<c:url value="resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
  
  
 </body>

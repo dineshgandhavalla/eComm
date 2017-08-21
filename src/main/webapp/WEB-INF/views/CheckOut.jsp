@@ -12,20 +12,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untitled</title>
+    <title>CheckOut</title>
     <link rel="stylesheet" href="<c:url value= "/resources/assets/bootstrap/css/bootstrap.min.css"/>">
     <link rel="stylesheet" href="<c:url value= "/resources/assets/fonts/font-awesome.min.css"/>">
   <!--   <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/invoice.css">
+   
    -->  <link rel="stylesheet" href="<c:url value= "/resources/assets/css/Bootstrap-Payment-Form.css"/>">
     <link rel="stylesheet" href="<c:url value= "/resources/assets/css/payment.css"/>">
+    <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
+	<link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
+    <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Registration-Form.css"/>">
+    
 </head>
 
 <body>
-    <div class="container">
-        <div class="col-xs-offset-2 col-xs-12">
+
+<div 
+   <c:import url="/WEB-INF/views/header.jsp" />>
+</div>
+<br>
+<br>
+
+<div class="container">
+   <div class="col-xs-offset-2 col-xs-12">
              <div class="form-group">
-                 <label class="control-label" for="total"><h3><strong>Grand Total : ${total}</strong></h3></label>
+                 <label style="color:white;" class="control-label" for="total"><h3><strong>Grand Total : ${total}</strong></h3></label>
                 </div>
                 </div>                    
         
@@ -117,6 +128,12 @@
    
  </form:form>
     </div>
+    
+    <div 
+   <c:import url="/WEB-INF/views/footer.jsp" />>
+</div>
+    
+    
     <script src="<c:url value= "/resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value= "/resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
 </body>

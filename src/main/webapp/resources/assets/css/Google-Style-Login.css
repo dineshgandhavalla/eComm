@@ -94,3 +94,7 @@ body{
   background-image:url(../../assets/img/1086_donuts.jpg); */
 }
 
+nav > ul > li > a:hover { 
+border-bottom: 2px solid #F117B4;
+text-decoration: none; 
+}

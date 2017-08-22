@@ -19,10 +19,12 @@ com\spring\dao\CardDAO.class
 com\spring\controller\ProductController.class
 com\spring\service\SupplierServiceImpl.class
 com\spring\controller\CartController.class
+com\spring\controller\ImageController.class
 com\spring\dao\CheckOutDAOImpl.class
 com\spring\dao\SupplierDAOImpl.class
 com\spring\dao\UserDAOImpl.class
 com\spring\service\CartService.class
+com\spring\controller\HomeController.class
 com\spring\model\Product.class
 com\spring\service\ProductService.class
 com\spring\model\Users.class
@@ -30,5 +32,6 @@ com\spring\service\SupplierService.class
 com\spring\dao\CardDAOImpl.class
 com\spring\dao\ProductDAOImpl.class
 com\spring\model\Cart.class
+com\spring\controller\CheckOutController.class
 com\spring\controller\SupplierController.class
 com\spring\service\CategoryServiceImpl.class

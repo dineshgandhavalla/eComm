@@ -8,7 +8,6 @@ import java.util.Map;
 
 import javax.persistence.ManyToOne;
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -132,7 +131,7 @@ public class RegistrationController {
 	 
 	
 	@RequestMapping(value="/saveUser",method = RequestMethod.POST)
-public ModelAndView addUser(@Valid @ModelAttribute("users")Users users ,BindingResult result)
+public ModelAndView addUser( @ModelAttribute("users")Users users ,BindingResult result)
 {
 		if(result.hasErrors())
 		{	

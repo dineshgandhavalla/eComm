@@ -16,6 +16,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.spring.dao.SupplierDAO;
+import com.spring.dao.SupplierDAOImpl;
 import com.spring.model.Card;
 import com.spring.model.Cart;
 import com.spring.model.Category;
@@ -27,7 +29,6 @@ import com.spring.model.Users;
 @Configuration
 @ComponentScan("com.spring")
 @EnableTransactionManagement
-@EnableWebMvc
 public class HbConfig {
 
 	@Bean(name = "dataSource")
@@ -82,9 +83,9 @@ public class HbConfig {
 	}
 
 	
-	/*@Autowired
-	@Bean(name = "userDAO")
-	public UserDAO getUserDetailsDAO(SessionFactory sessionFactory) {
-			return new UserDAOImpl(sessionFactory);
-	}*/
+	@Autowired
+	@Bean(name = "supplierDAO")
+	public SupplierDAO getSupplierDetailsDAO(SessionFactory sessionFactory) {
+			return new SupplierDAOImpl(sessionFactory);
+	}
 }

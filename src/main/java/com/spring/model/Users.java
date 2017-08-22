@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
 
+import org.springframework.stereotype.Component;
+
+@Component
 @Entity 
 @Table(name="User_details")
 public class Users {
@@ -15,7 +17,7 @@ public class Users {
 	private int id;
 	private String name,email,address,role,contact_number,repeat_password;
 	
-	@Size(min=4,max=8, message="password must be between {min} and {max} characters ")
+	//@Size(min=4,max=8, message="password must be between {min} and {max} characters ")
 	private String password;
 	private boolean enabled;
 	

@@ -49,8 +49,9 @@
         <div class="row">
 <c:forEach items="${prodList}" var="product">     
             <div class="col-md-3 col-sm-4">
-                <div class="thumbnail"><img src="<c:url value="/resources/assets/img/rv_1-gito-1.jpg"/>">
-                    <div class="caption">
+                <div class="thumbnail">
+                <img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="124" height="90" /><%-- <img src="<c:url value="/resources/assets/img/rv_1-gito-1.jpg"/>">
+                    --%> <div class="caption">
                         <h3>${product.product_name}</h3>
                         <ul>
                         <li>${product.description}</li>

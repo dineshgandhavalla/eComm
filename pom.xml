@@ -8,13 +8,21 @@
   <name>eComm Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
-    <dependency>
+    <!-- <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-  	   <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+  	 -->   <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+  	 	
+  	<dependency>
+  <groupId>junit</groupId>
+  <artifactId>junit</artifactId>
+  <version>4.11</version>
+  <scope>test</scope>
+</dependency>
+  	 
 <dependency>
     <groupId>org.springframework</groupId>
     <artifactId>spring-core</artifactId>
@@ -135,14 +143,15 @@
 </dependency>
  -->  	
   	<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-validator -->
+  
 <dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-validator</artifactId>
-    <version>5.2.4.Final</version>
+  <groupId>org.hamcrest</groupId>
+  <artifactId>hamcrest-library</artifactId>
+  <version>1.3</version>
+  <scope>test</scope>
 </dependency>
   	
-  	
-  </dependencies>
+   </dependencies>
   
   <build>
     <finalName>eComm</finalName>

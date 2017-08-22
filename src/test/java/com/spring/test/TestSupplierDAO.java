@@ -62,7 +62,7 @@ public class TestSupplierDAO {
 		Supplier flag =(Supplier)supplierService.delete(780);
 		assertEquals("deleteSupplierTestCase", false, flag);
 	}
-	
+	 
 */
 	/*@Test
 	public void getAllSupplierTestCase()

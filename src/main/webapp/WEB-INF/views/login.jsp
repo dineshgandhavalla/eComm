@@ -49,13 +49,7 @@
             </div>
         </form:form><a href="#" class="forgot-password">Forgot your password?</a></div>
         
-       <!--  <br>
-        <div 
-   <c:import url="/WEB-INF/views/footer.jsp" />>
-
-</div>
-
- -->
+<br>
 <div 
    <c:import url="/WEB-INF/views/footer.jsp" />>
 </div>

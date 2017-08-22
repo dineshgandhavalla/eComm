@@ -1,19 +1,22 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-        <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head> 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Product List</title>
-<link rel="stylesheet" href="<c:url value="resources/assets/bootstrap/css/bootstrap.min.css"/>">
+
+	<link rel="stylesheet" href="<c:url value="resources/assets/bootstrap/css/bootstrap.min.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/category.css"/>">
 
 
 </head>
+
 <body>
 
 <div 
@@ -22,11 +25,11 @@
 </div>
 
 
-<div class="container">
+<div class="container-fluid">
 
-<c:forEach items="${prodList}" var="product">
 
-            
+
+            <%-- 
                 <div class="col-md-4 col-md-offset-0">
                     <div>
                         <div class="row">
@@ -40,18 +43,33 @@
                                 <li> ${product.description}</li>
                                
                                 <li>
-                                <form:form action="addToCart/${product.id}" method="POST">
+             --%>              
+             
+             
+        <div class="row">
+<c:forEach items="${prodList}" var="product">     
+            <div class="col-md-3 col-sm-4">
+                <div class="thumbnail"><img src="<c:url value="/resources/assets/img/rv_1-gito-1.jpg"/>">
+                    <div class="caption">
+                        <h3>${product.product_name}</h3>
+                        <ul>
+                        <li>${product.description}</li>
+                        <li>${product.price}</li>
+                      
+     
+                   <form:form action="addToCart/${product.id}" method="POST">
                                 <input type="submit" value="Add to Cart" class="btn btn-primary">
                                 </form:form>
-                                </li>
-                                </ul></p>
+                                
+                                </ul>
                             </div>
                         </div>
                     </div>
-                
+         
+           </c:forEach>       
                 </div>
                 
-           </c:forEach>
+         
         </div>
         
         <%-- <div class="well">     

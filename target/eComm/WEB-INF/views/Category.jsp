@@ -16,13 +16,16 @@
     <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/category.css"/>">
      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="<c:url value="resources/assets/fonts/font-awesome.min.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
+        <link rel="stylesheet" href="<c:url value="resources/assets/fonts/font-awesome.min.css"/>">
 </head>
 
 <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
+            <a class="navbar-brand navbar-link" href="index"><img src="resources/assets/img/90a3d103aa1d8fc2bff6448dcd2edc53.svg" width="70px" id="logo"> N Bakes &amp; Cakes</a>
+             
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -74,16 +77,10 @@
 				<input type="submit" name="action" value="Edit" />
 				<input type="submit" name="action" value="Delete" />
 				<input type="submit" name="action" value="Search" />
-                </div>
-               <!--  <div class="row">
-                    <div class="col-lg-offset-2 col-md-offset-5 col-sm-2 col-xs-4">
-                        <button class="btn btn-primary btn-block" type="submit">SAVE</button>
-                    </div>
-                </div>
- -->            </div>
+                </div></form:form>
+              </div>
         </div>
-    </form:form>
-    
+  
     
     <br>
    <div class="container">
@@ -109,6 +106,10 @@
 </table>
 </div>
     </div>
+    
+    <div 
+   <c:import url="/WEB-INF/views/footer.jsp" />>
+</div>
     <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
 </body>

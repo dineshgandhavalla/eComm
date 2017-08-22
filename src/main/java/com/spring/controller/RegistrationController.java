@@ -57,7 +57,7 @@ public class RegistrationController {
 		Category category = new Category();
 		map.put("category", category);
 		map.put("categoryList",categoryService.getAllCategory());
-		
+		map.put("HomeList", productDAO.homeList());
 
 		return "index";
 		

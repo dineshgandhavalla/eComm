@@ -1,19 +1,19 @@
 package com.spring.controller;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
+
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.Blob;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.hibernate.Hibernate;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,7 +26,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.spring.dao.CategoryDAO;
 import com.spring.dao.ProductDAO;
 import com.spring.dao.SupplierDAO;
-import com.spring.model.Category;
 import com.spring.model.Product;
 import com.spring.service.ProductService;
  
@@ -41,8 +40,9 @@ public class ProductController {
 	@Autowired
 	SupplierDAO supplierDAO;
 	
-	private Path path;
-	
+	@Autowired
+	SessionFactory sessionFactory;
+
 
 	
 	@Autowired
@@ -60,31 +60,21 @@ public class ProductController {
 			return "Product";
 		}
 	
-	
+	  
+	   
 	@RequestMapping(value="/product.do", method=RequestMethod.POST)
-	public String doActions(RedirectAttributes attributes,HttpServletRequest request,@ModelAttribute ("product")Product product, BindingResult result, @RequestParam String action, Map<String, Object> map,Model model)
-            		throws Exception
+	public String doActions(RedirectAttributes attributes,HttpServletRequest request,@ModelAttribute ("product")Product product, 
+			BindingResult result, @RequestParam String action, Map<String, Object> map,Model model,
+			@RequestParam("file") MultipartFile file)	throws Exception
 	{
 		Product productResult = new Product();
 		 if (action.equals("Add"))
 		 {
-			 productResult = product;
-			 MultipartFile file = product.getImage();
-				String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-		        path = Paths.get(rootDirectory + "\\WEB-INF\\resources\\images\\"+product.getId()+".jpg");
-		        if (file != null && !file.isEmpty()) {
-		            try {
-		            	System.out.println("Image Saving Start");
-		            	file.transferTo(new File(path.toString()));
-		            	System.out.println("Image Saved");
-		            } catch (Exception e) {
-		                e.printStackTrace();
-		                System.out.println("Error");
-		                throw new RuntimeException("item image saving failed.", e);
-		            }
-		        }
-		        productService.add(product);
-		 }
+			 
+				 product.setImage(file.getBytes());
+			     productService.add(product);
+			     productResult = product;
+		       		 }
 			 
 		 if (action.equals("Edit"))
 				 {

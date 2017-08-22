@@ -85,23 +85,23 @@ ${logout }
     <br>
      <div class="container-fluid">
         <div class="row">
-     
+     <c:forEach items="${HomeList}" var="product">
             <div class="col-md-4 col-sm-4">
-                <div class="thumbnail"><img src="<c:url value="/resources/assets/img/Untitled design.jpg"/>">
-                    <div class="caption">
-                        <h3>${exclusive1.epname}</h3>
+                <div class="thumbnail"><img class="img-responsive" style="padding-top: 5px" src="<c:url value="/resources/images/${product.id }.jpg" ></c:url>">       <div class="caption">
+                        <h3>${product.product_name}</h3>
                         <ul>
-                        <li>${exclusive1.epdescription}</li>
-                        <li>${exclusive1.eprice}</li>
-                        
+                        <li>${product.description}</li>
+                        <li>${product.price}</li>
+                        		
+                        		<form:form action="addToCart/${product.id}">
                                 <input type="submit" value="Add to Cart" class="btn btn-primary">
-                                
+                                </form:form>
                         </ul>
                     </div>
                 </div>
                 
             </div>
-         
+         </c:forEach>
                 </div>
             </div>
         

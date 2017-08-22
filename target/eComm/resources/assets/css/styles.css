@@ -11,27 +11,12 @@ li.dropdown: hover > ul.dropdown-menu{
   cursor:pointer;
 }
 
-nav.navbar.navbar-inverse.navbar-fixed-top{
-  background-color:rgb(127,190,193);
+nav.navbar.navbar-inverse.navbar.scrolled{
+  background-color:#7fbec1;
+  transition:background-color 300ms linear;
 }
 
 i.glyphicon.glyphicon-align-justify{
   margin-left:5px;
 }
 
-
-div.carousel.slide{
-	width:96%;
-	margin: 0 AUTO;
-}
-.carousel-inner{
-	max-height:500px;
-	}
-.item{
-	width: 100%; 
-	height: auto;
-}
-.navbar-fixed-bottom{
-	max-height:250px;
-	margin-top:50px;
-}

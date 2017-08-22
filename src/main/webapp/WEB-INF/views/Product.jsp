@@ -1,6 +1,7 @@
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+   
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
         <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
     
@@ -47,7 +48,7 @@
     </nav>
     <div class="container">
         <div class="well">
-            <form:form method="POST" action="product.do" encode="multipart/form-data" modelAttribute="product">
+            <form:form method="POST" action="product.do" modelAttribute="product" enctype="multipart/form-data">
                 
                     <div class="row">
                     <div class="col-md-offset-3 col-sm-2 col-xs-6">
@@ -98,8 +99,10 @@
                     </div>
     		 
                <div class="col-sm-4 col-xs-6">
-              <input type="file" class=" btn btn-default btn-block form-control" name="image" />
-				</div>
+               
+               <input type="file" name="file" />
+           <%--    <form:input type="file" class=" btn btn-default btn-block form-control" path="image" />
+ --%>				</div>
 	</div>
             
             <div class="row">

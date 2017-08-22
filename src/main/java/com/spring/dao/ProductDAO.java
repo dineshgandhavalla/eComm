@@ -13,6 +13,7 @@ public interface ProductDAO {
 	public void edit(Product product);
 	public void delete(int pid);
 	public Product getProduct(int pid);
+	public List<Product> homeList() ;
 	public List getAllProduct();
 	public List getProductByCategory(int Categoryid);
 	public List getExclusivebyCategory(int Categoryid);

@@ -25,7 +25,7 @@ ${logout }
    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand navbar-link" href="#"><img src="resources/assets/img/90a3d103aa1d8fc2bff6448dcd2edc53.svg" width="70px" id="logo"> N Bakes &amp; Cakes</a>
+                <a class="navbar-brand navbar-link" href="index"><img src="resources/assets/img/90a3d103aa1d8fc2bff6448dcd2edc53.svg" width="70px" id="logo"> N Bakes &amp; Cakes</a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navcol-1">
@@ -53,10 +53,15 @@ ${logout }
         </div>
     </nav>
 <!--End of Navbar (header) -->
+    <br>
+    <br>
+    <br>
+    <br>
     
    <div class="carousel slide" data-ride="carousel" id="carousel-1">
       <div class="carousel-inner" role="listbox">
-            <div class="item"><img class="img-responsive" src="resources/assets/img/pexels-photo-227432.jpeg" alt="Slide Image" ></div>
+            <div class="item">
+            <img class="img-responsive" src="resources/assets/img/pexels-photo-227432.jpeg" alt="Slide Image" ></div>
             <div class="item"><img src="resources/assets/img/chocolate-sweet.jpg" alt="Slide Image" ></div>
             <div class="item active"><img src="resources/assets/img/gq1khg1ullp31lkyimxg.jpg" alt="Slide Image" ></div>
         </div>
@@ -80,23 +85,23 @@ ${logout }
     <br>
      <div class="container-fluid">
         <div class="row">
-     
+     <c:forEach items="${HomeList}" var="product">
             <div class="col-md-4 col-sm-4">
-                <div class="thumbnail"><img src="<c:url value="/resources/assets/img/Untitled design.jpg"/>">
-                    <div class="caption">
-                        <h3>${exclusive1.epname}</h3>
+                <div class="thumbnail"><img class="img-responsive" style="padding-top: 5px" src="<c:url value="/resources/images/${product.id }.jpg" ></c:url>">       <div class="caption">
+                        <h3>${product.product_name}</h3>
                         <ul>
-                        <li>${exclusive1.epdescription}</li>
-                        <li>${exclusive1.eprice}</li>
-                        
+                        <li>${product.description}</li>
+                        <li>${product.price}</li>
+                        		
+                        		<form:form action="addToCart/${product.id}">
                                 <input type="submit" value="Add to Cart" class="btn btn-primary">
-                                
+                                </form:form>
                         </ul>
                     </div>
                 </div>
                 
             </div>
-         
+         </c:forEach>
                 </div>
             </div>
         
@@ -116,19 +121,20 @@ ${logout }
                     <p class="footer-center-info email text-left"> +91 9160 596953</p>
                 </div>
                 <div><i class="fa fa-envelope footer-contacts-icon"></i>
-                    <p> <a href="#" target="_blank">NBCOnline@gmail.com</a></p>
+                    <p> <a href="#" target="_blank">NBCOnline@Gmail.com</a></p>
                 </div>
             </div>
             <div class="clearfix visible-sm-block"></div>
             <div class="col-md-4 footer-about">
                 <h4 class="text-center">About Us</h4>
-                <p class="text-justify"> We N Bakes&amp;Cakes provides a varitey of cakes and desserts with losts of customisation options We have a varitey of premium and exotic flavours for coustomisation in every dishes we serve.Our motto is to make ur dream thoughts into actions.
+                <p class="text-justify"> We N Bakes&amp;Cakes provides a variety of cakes and desserts with lots of customization options, We have a variety of premium and exotic flavors for customization in every dishes we serve.Our motto is to make ur dream thoughts into actions.
                 </p>
                 <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
             </div>
         </div>
     </footer>
-    <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
+   	 <script src="<c:url value="/resources/assets/js/nav.js"/>"></script>
+     <script src="<c:url value="resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value="resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.2.1/bootstrap-hover-dropdown.min.js"></script>
 </body>

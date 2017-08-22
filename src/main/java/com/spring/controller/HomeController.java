@@ -19,14 +19,11 @@ import com.spring.dao.CartDAOImpl;
 import com.spring.dao.ProductDAO;
 import com.spring.model.Cart;
 import com.spring.model.Product;
-import com.spring.service.CartService;
-import com.spring.service.CategoryService;
 import com.spring.service.ProductService;
 
 
 @Controller
 public class HomeController {
- 
 	@Autowired
 	ProductService productService;
 	/*@Autowired
@@ -58,5 +55,4 @@ public class HomeController {
 	}
 		
 */}
-
 

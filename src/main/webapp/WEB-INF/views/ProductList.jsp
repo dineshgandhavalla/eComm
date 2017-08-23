@@ -23,34 +23,20 @@
    <c:import url="/WEB-INF/views/header.jsp"/>>
 
 </div>
-
+<br>
+<br>
+<br>
+<br>
 
 <div class="container-fluid">
 
 
-
-            <%-- 
-                <div class="col-md-4 col-md-offset-0">
-                    <div>
-                        <div class="row">
-                            <div class="col-md-12"><img atl="${product.id}"
-			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">></div>
-                            <div class="col-md-12">
-                                <h4>${product.product_name}</h4>
-                                <p>
-                                <ul>
-                                <li> ${product.price}</li>
-                                <li> ${product.description}</li>
-                               
-                                <li>
-             --%>              
-             
-             
+          
         <div class="row">
 <c:forEach items="${prodList}" var="product">     
             <div class="col-md-3 col-sm-4">
                 <div class="thumbnail">
-                <img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="124" height="90" /><%-- <img src="<c:url value="/resources/assets/img/rv_1-gito-1.jpg"/>">
+                <img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="298" height="398" /><%-- <img src="<c:url value="/resources/assets/img/rv_1-gito-1.jpg"/>">
                     --%> <div class="caption">
                         <h3>${product.product_name}</h3>
                         <ul>

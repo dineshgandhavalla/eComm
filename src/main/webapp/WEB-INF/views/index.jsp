@@ -56,14 +56,18 @@ ${logout }
     <br>
     <br>
     <br>
-    <br>
-    
+
+  <div class="jumbotron">
+  <h1>N Bakes & Cakes Welcomes you</h1>      
+  <p>One Destination for all your Celebrations</p>
+</div>
+
    <div class="carousel slide" data-ride="carousel" id="carousel-1">
       <div class="carousel-inner" role="listbox">
             <div class="item">
-            <img class="img-responsive" src="resources/assets/img/pexels-photo-227432.jpeg" alt="Slide Image" ></div>
-            <div class="item"><img src="resources/assets/img/chocolate-sweet.jpg" alt="Slide Image" ></div>
-            <div class="item active"><img src="resources/assets/img/gq1khg1ullp31lkyimxg.jpg" alt="Slide Image" ></div>
+            <img class="img-responsive" src="resources/assets/img/choc-salted-caramel-cake2.jpg" alt="Slide Image" ></div>
+            <div class="item"><img src="resources/assets/img/cupcake.jpg" alt="Slide Image" ></div>
+            <div class="item active"><img src="resources/assets/img/food-wood-coffee-cup.jpg" alt="Slide Image" ></div>
         </div>
         
         <div>
@@ -86,12 +90,13 @@ ${logout }
      <div class="container-fluid">
         <div class="row">
      <c:forEach items="${HomeList}" var="product">
-            <div class="col-md-4 col-sm-4">
-                <div class="thumbnail"><img class="img-responsive" style="padding-top: 5px" src="<c:url value="/resources/images/${product.id }.jpg" ></c:url>">       <div class="caption">
+            <div class="col-md-3 col-sm-4">
+                <div class="thumbnail"> <img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="298" height="398" />
+                <div class="caption">
                         <h3>${product.product_name}</h3>
                         <ul>
-                        <li>${product.description}</li>
-                        <li>${product.price}</li>
+                        <p>${product.description}</p>
+                        <li>Price: Rs.<Strong>${product.price}</Strong></li>
                         		
                         		<form:form action="addToCart/${product.id}">
                                 <input type="submit" value="Add to Cart" class="btn btn-primary">

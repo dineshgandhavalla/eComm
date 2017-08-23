@@ -110,10 +110,10 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                     <h4 class="modal-title">Cash On Delivery</h4></div>
                 <div class="modal-body">
-                    <p>A Shipping Charge of <Strong>Rs.99/-</Strong> is applicable for Cash on Delivery</p>
+                    <p>A delivery Charge of <Strong>Rs.99/-</Strong> is applicable for Cash on Delivery for orders below Rs.200/-</p>
                     <div class="col-xs-offset-2 col-xs-12">
              <div class="form-group">
-                 <label class="control-label" for="total"><h3><strong>Grand Total : ${total} + ${cod}</strong></h3></label>
+                 <label class="control-label" for="total"><h3><strong>Grand Total : ${total}</strong></h3></label>
                 </div>
                 </div>                    
         

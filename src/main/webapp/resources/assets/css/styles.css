@@ -6,11 +6,30 @@ img#logo{
   display:inline-block;
 }
 
+div#carousel-1.carousel.slide{
+	width:90%;
+	margin:0 auto;
+}
+
 li.dropdown: hover > ul.dropdown-menu{
   display:block;
   cursor:pointer;
 }
-
+div.jumbotron{
+	background-image:url(../../assets/img/pexels-photo-441795.jpeg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	color:#ffffff;
+	text-align:center;
+	 padding-top: 20%;
+      padding-bottom: 20%;
+	
+}
+div.thumbnail{
+	 background-color:rgba(248,205,174,0.9);
+	 font-family:'Cookie';
+	 font-size:x-large;
+}
 nav.navbar.navbar-inverse.navbar.scrolled{
   background-color:#7fbec1;
   transition:background-color 300ms linear;

@@ -35,6 +35,7 @@ background-color:rgba(248,205,174,0.75);
 		<table class ="table table-hover ">
 <thead>
 		<tr>
+		<th>Product Image</th>
 	<th>Product name</th>
 	<th>product price</th>
 	<th>Quantity</th>
@@ -49,6 +50,7 @@ background-color:rgba(248,205,174,0.75);
 
 <form:form action="cart.do/${cd.id}" method="POST">
 		<tr>
+		<td><img src="/eComm/myImage/imageDisplay?id=${cd.productid}" alt="" width="200" height="200" /></td>
 			<td>${cd.productname}</td>
 			<td>${cd.productprice}</td>
 			<td>

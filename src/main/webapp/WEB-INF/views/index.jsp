@@ -91,7 +91,7 @@ ${logout }
         <div class="row">
      <c:forEach items="${HomeList}" var="product">
             <div class="col-md-3 col-sm-4">
-                <div class="thumbnail"> <img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="298" height="398" />
+                <div class="thumbnail"><img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="298" height="398" />
                 <div class="caption">
                         <h3>${product.product_name}</h3>
                         <ul>

@@ -8,6 +8,7 @@ import java.util.Map;
 
 import javax.persistence.ManyToOne;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -131,30 +132,18 @@ public class RegistrationController {
 	 
 	
 	@RequestMapping(value="/saveUser",method = RequestMethod.POST)
-public ModelAndView addUser( @ModelAttribute("users")Users users ,BindingResult result)
+public String addUser(@Valid @ModelAttribute("users")Users users ,BindingResult result)
 {
 		if(result.hasErrors())
 		{	
-			ModelAndView model = new ModelAndView("Signup");
-			return model;
+			return "Signup";
 		}
 		
 		users.setRole("ROLE_USER");
 		users.setEnabled(true);
 		userDAO.saveUser(users);
-		ModelAndView model = new ModelAndView("index");
-				
-		return model;
+		return "redirect:/";
 		
-	}
-	
-	/*@RequestMapping(value = "navproducts/${id}")
-	public String listCategory(Model model,@PathVariable("id") int id,RedirectAttributes attributes) {
-	
-		model.addAttribute("navproducts", productDAO.getProductByCategory(id));
-		model.addAttribute("Clickedcatproduct", "true");
-		return "catproducts";
-	}*/
-	
+ 			}
 
 }

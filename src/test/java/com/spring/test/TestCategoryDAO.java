@@ -2,6 +2,7 @@
 
 import static org.junit.Assert.assertEquals;
 
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import com.spring.dao.CategoryDAO;
 import com.spring.model.Category;
 
-@ComponentScan("com.spring.model")
+@ComponentScan("com.spring")
 public class TestCategoryDAO {
 
 	@Autowired
@@ -40,10 +41,30 @@ public void createCategory()
 	//Category category=new Category();
 	category.setCategoryName("Muffins");
 	category.setCategoryDescription("small");
-	boolean flag=categoryDAO.saveCategory(category);
-	assertEquals("createCategoryTestCase", true, flag);
+	categoryDAO.add(category);
+	int catno = categoryDAO.list().size();
+	assertEquals(5 , catno);
 
 }
+
+
+	@Test
+	public void editCategory(){
+		category.setId(912);
+		category.setCategoryName("dessert");
+		category.setCategoryDescription("cool");
+		categoryDAO.edit(category);
+		int catno = categoryDAO.list().size();
+		assertEquals(5,catno);
+}
+	@Test
+	public void deleteCategory()
+	{
+		categoryDAO.delete(912);
+		int catno = categoryDAO.list().size();
+		assertEquals(4, catno);
+	}
+
 
 }
 */

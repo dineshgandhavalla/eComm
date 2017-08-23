@@ -15,8 +15,7 @@
     <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Registration-Form.css"/>">
-    <%-- <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
- --%></head>
+    </head>
 
 <body>
 
@@ -35,6 +34,7 @@
                     </div>
                     <div class="col-sm-6 input-column">
                         <form:input path="name" class="form-control" type="text"   required="true" placeholder="enter your name"/>
+                    <form:errors path="name"></form:errors>
                     </div>
                 </div>
                 <div class="form-group">
@@ -43,6 +43,7 @@
                     </div>
                     <div class="col-sm-6 input-column">
                         <form:input path="email" class="form-control" type="email" placeholder="enter email"/>
+                        <form:errors path="email"></form:errors>
                     </div>
                 </div>
                 <div class="form-group">
@@ -51,6 +52,7 @@
                     </div>
                     <div class="col-sm-6 input-column">
                         <form:input path="password" class="form-control" type="password" placeholder="enter password"/>
+                        <form:errors path="password"></form:errors>
                     </div>
                 </div>
                 <div class="form-group">
@@ -59,6 +61,7 @@
                     </div>
                     <div class="col-sm-6 input-column">
                         <form:input path="repeat_password" class="form-control" type="password" placeholder="repeat password"/>
+                        <form:errors path="repeat_password"></form:errors>
                     </div>
                 </div>
                 <div class="form-group">
@@ -67,13 +70,24 @@
                     </div>
                     <div class="col-sm-6">
                         <form:input path="contact_number" class="form-control" type="tel" placeholder="phone number"/>
+                        <form:errors path="contact_number"></form:errors>
                     </div>
                 </div>
-                <div class="checkbox">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-6">
+                        <form:label path="address" >Address</form:label>
+                    </div>
+                    <div class="col-sm-6 col-xs-6">
+                        <form:textarea path="address" class="form-control"></form:textarea>
+                        <form:errors path="address"></form:errors>
+                    </div>
+                </div>
+                <!-- <div class="checkbox">
                     <label>
                         <input type="checkbox">I've read and accept the terms and conditions</label>
                 </div>
-                <button class="btn btn-default submit-button" type="submit">Sign Up</button>
+                 --><button class="btn btn-default submit-button" type="submit">Sign Up</button>
+                
             </form:form>
         </div>
     </div>

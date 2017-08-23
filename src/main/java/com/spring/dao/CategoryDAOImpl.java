@@ -30,12 +30,14 @@ public class CategoryDAOImpl implements CategoryDAO{
 		return true;
 	}
 
+	@Transactional
 	public void add(Category category) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().save(category);
 		
 	}
 
+	@Transactional
 	public void edit(Category category) {
 		// TODO Auto-generated method stub
 		
@@ -43,6 +45,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 		
 	}
 
+	@Transactional
 	public void delete(int Catid) {
 		// TODO Auto-generated method stub
 

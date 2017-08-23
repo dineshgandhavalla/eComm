@@ -11,6 +11,9 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
@@ -23,8 +26,10 @@ public class Product implements Serializable{
 	@Column(name="pid") 
 	@GeneratedValue 
 	private int id;
-	private String product_name,description;
-	private int price,stock;
+	private String product_name;
+	private String description;
+   private int price;
+	private int stock;
 	private int Catid;
 	private int Supid;
 	

@@ -1,5 +1,4 @@
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-   
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -79,18 +78,19 @@
                 <div class="row">
                     <div class="col-md-offset-3 col-sm-2 col-xs-6">
                         <form:label path="price" >Price </form:label>
-                    </div>
+                        </div>
                     <div class="col-sm-4 col-xs-6">
                         <form:input path="price" class="form-control" type="text"/>
+        
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-offset-3 col-sm-2 col-xs-6">
                         <form:label path="stock" >Stock </form:label>
-                    </div>
+                     </div>
                     <div class="col-sm-4 col-xs-6">
                         <form:input path="stock" class="form-control" type="text"/>
-                    </div>
+                     </div>
                 </div>
                 
                 <div class="row">
@@ -101,6 +101,7 @@
                <div class="col-sm-4 col-xs-6">
                
                <input type="file" name="file" />
+               
            <%--    <form:input type="file" class=" btn btn-default btn-block form-control" path="image" />
  --%>				</div>
 	</div>
@@ -179,8 +180,7 @@
 			<td>${product.price}</td>
 			<td>${product.stock}</td>
 			<td><div class="thumbnail">
-			<img height="200px" width="200px" atl="${product.id}"
-			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
+			<img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="298" height="398" />
 			</div></td>
 			
 			

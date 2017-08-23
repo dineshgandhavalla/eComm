@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -63,7 +64,7 @@ public class ProductController {
 	  
 	   
 	@RequestMapping(value="/product.do", method=RequestMethod.POST)
-	public String doActions(RedirectAttributes attributes,HttpServletRequest request,@ModelAttribute ("product")Product product, 
+	public String doActions(RedirectAttributes attributes,HttpServletRequest request,@Valid @ModelAttribute ("product")Product product, 
 			BindingResult result, @RequestParam String action, Map<String, Object> map,Model model,
 			@RequestParam("file") MultipartFile file)	throws Exception
 	{
@@ -92,6 +93,11 @@ public class ProductController {
 			 productResult = searchedProduct!=null ? searchedProduct : new Product();
 			
 		}
+		 
+		 if(result.hasErrors())
+			{	
+				return "Product";
+			}
 		map.put("product", productResult);
 		map.put("productList", productService.getAllProduct());
 		model.addAttribute("categoryList", categoryDAO.list());

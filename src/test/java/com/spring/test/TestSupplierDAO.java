@@ -1,6 +1,7 @@
-package com.spring.test;
+/*package com.spring.test;
 
 import static org.junit.Assert.assertEquals;
+
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -21,11 +22,7 @@ public class TestSupplierDAO {
 	@Autowired
 	private static SupplierDAO supplierDAO;
 	
-	@Autowired
-	private static SupplierService supplierService;
-	
-	
-	
+		
 	@BeforeClass
 	public static void initialize()
 	{
@@ -39,38 +36,31 @@ public class TestSupplierDAO {
 	}
 
 	@Test
-	public void createSupplierTestCase()
+	public void addSupplierTestCase()
 	{
 		supplier.setSupplier_name("Dinesh");
-	
-		boolean flag = supplierDAO.saveSupplier(supplier);
-		assertEquals("createSupplierTestCase", true, flag);
-	}
-/*
-	@Test
-	public void updateProductTestCase()
-	{
-		supplier.setSupplier_name("Ramesh");
-		
-		boolean flag = supplierDAO.saveSupplier(supplier);
-		assertEquals("updateSupplierTestCase", true, flag);
-	}
+			supplierDAO.add(supplier);
+			int noofpro = supplierDAO.list().size();
+			assertEquals(3, noofpro);
+		}
+
 	@Test
 	public void deleteSupplierTestCase()
 	{
-	supplier.setId(780);
-		Supplier flag =(Supplier)supplierService.delete(780);
-		assertEquals("deleteSupplierTestCase", false, flag);
+		supplierDAO.delete(910);
+		int noofpro = supplierDAO.list().size();
+		assertEquals(2, noofpro);
 	}
-	 
-*/
-	/*@Test
-	public void getAllSupplierTestCase()
+	
+	@Test
+	public void editSupplierTestCase()
 	{
-		int noofpro=supplierDAO.list().size();
-		assertEquals("getAllSupplierTestCase", noofpro);
-	}*/
-	
-	
-	
+		supplier.setId(911);;
+		supplier.setSupplier_name("naveen");
+		supplierDAO.edit(supplier);
+		int noofpro = supplierDAO.list().size();
+		assertEquals(3, noofpro);
+	}
+		
 }
+*/

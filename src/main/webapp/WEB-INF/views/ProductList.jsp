@@ -40,9 +40,9 @@
                     --%> <div class="caption">
                         <h3>${product.product_name}</h3>
                         <ul>
-                        <li>${product.description}</li>
-                        <li>${product.price}</li>
-                      
+                         <p>${product.description}</p>
+                        <li>Price: Rs.<Strong>${product.price}</Strong></li>
+                       
      
                    <form:form action="addToCart/${product.id}" method="POST">
                                 <input type="submit" value="Add to Cart" class="btn btn-primary">

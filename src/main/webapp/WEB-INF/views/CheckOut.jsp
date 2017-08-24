@@ -64,21 +64,58 @@
                                         <div class="form-group">
                                             <form:label class="control-label" path="card_number">Card number </form:label>
                                             <div class="input-group">
-                                                <form:input class="form-control" type="tel" required="" placeholder="Valid Card Number" path="card_number"/>
+                                                <form:input class="form-control" type="tel" required="" placeholder="Valid Card Number" pattern="^[0123456789]\d{16}$" path="card_number"/>
                                                 <div class="input-group-addon"><span><i class="fa fa-credit-card"></i></span></div>
+                                                                        <form:errors path="card_number"></form:errors>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-7">
+                                    <div class="col-xs-9">
                                         <div class="form-group">
                                             <label class="control-label" for="cardExpiry"><span class="hidden-xs">expiration </span><span class="visible-xs-inline">EXP </span> date</label>
-                                            <input class="form-control" type="tel" required="" placeholder="MM / YY" id="cardExpiry">
+                                            <!-- <input class="form-control" type="tel" required="" placeholder="MM / YY" id="cardExpiry">
+                                        --> <div class="row">
+                                        <div class="col-xs-5">
+                                         
+              <select class="form-control col-sm-2" name="expiry-month" placeholder="Month" id="expiry-month">
+                <option>Month</option>
+                <option value="01">Jan (01)</option>
+                <option value="02">Feb (02)</option>
+                <option value="03">Mar (03)</option>
+                <option value="04">Apr (04)</option>
+                <option value="05">May (05)</option>
+                <option value="06">June (06)</option>
+                <option value="07">July (07)</option>
+                <option value="08">Aug (08)</option>
+                <option value="09">Sep (09)</option>
+                <option value="10">Oct (10)</option>
+                <option value="11">Nov (11)</option>
+                <option value="12">Dec (12)</option>
+              </select>
+            </div>
+            <div class="col-xs-4">
+              <select class="form-control" name="expiry-year" placeholder="year">
+                <option>year</option>
+                <option value="18">2018</option>
+                <option value="19">2019</option>
+                <option value="20">2020</option>
+                <option value="21">2021</option>
+                <option value="22">2022</option>
+                <option value="23">2023</option>
+                <option value="24">2024</option>
+                <option value="25">2025</option>
+                <option value="26">2026</option>
+                <option value="27">2027</option>
+                <option value="28">2028</option>
+              </select>
+            </div>
+</div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-5 pull-right">
-                                        <div class="form-group">
+                                    <div class="col-xs-3 pull-right">
+                                          <div class="form-group">
                                             <label class="control-label" for="cardCVC">CVV code</label>
                                             <input class="form-control" type="tel" required="" placeholder="CVV" id="cardCVC">
                                         </div>

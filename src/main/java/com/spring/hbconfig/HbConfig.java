@@ -1,8 +1,6 @@
 package com.spring.hbconfig;
 
 import java.util.Properties;
-
-
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -18,6 +16,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.spring.dao.CategoryDAO;
 import com.spring.dao.CategoryDAOImpl;
+import com.spring.dao.ProductDAO;
+import com.spring.dao.ProductDAOImpl;
 import com.spring.dao.SupplierDAO;
 import com.spring.dao.SupplierDAOImpl;
 import com.spring.model.Card;
@@ -95,5 +95,11 @@ public class HbConfig {
 	@Bean(name = "categoryDAO")
 	public CategoryDAO getcategoryDetailsDAO(SessionFactory sessionFactory) {
 			return new CategoryDAOImpl(sessionFactory);
+	}
+	
+	@Autowired
+	@Bean(name = "productDAO")
+	public ProductDAO getproductDetailsDAO(SessionFactory sessionFactory) {
+			return new ProductDAOImpl(sessionFactory);
 	}
 }

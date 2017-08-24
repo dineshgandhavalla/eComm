@@ -39,7 +39,7 @@ public class ProductDAOImpl implements ProductDAO {
 		return product;
 	}
 
-
+	@Transactional
 	public void add(Product product) {
 		// TODO Auto-generated method stub
 		sessionFactory.getCurrentSession().save(product);

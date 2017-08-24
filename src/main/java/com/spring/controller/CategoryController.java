@@ -37,26 +37,6 @@ public class CategoryController {
 		
 	}
 
-/*	@RequestMapping(value="/category")
-	public String categoryPage(Model model)
-	{
-		model.addAttribute("category", new Category());
-		return "Category";
-		
-	}
-	
-	/*@RequestMapping(value="/saveCategory",method = RequestMethod.POST)
-	public String addCategory(@ModelAttribute("category")Category category)
-	{
-			
-			
-			categoryDAO.saveCategory(category);
-			
-			return "redirect:/";
-			
-		}
-	*/
-//
 	@Autowired
 	private CategoryService categoryService;
 	

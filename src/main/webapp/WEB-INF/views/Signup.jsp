@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 col-sm-4 col-xs-6">
+                    <div class="col-md-4 col-sm-4 col-sm-push-1 col-xs-6">
                         <form:label path="address" >Address</form:label>
                     </div>
                     <div class="col-sm-6 col-xs-6">

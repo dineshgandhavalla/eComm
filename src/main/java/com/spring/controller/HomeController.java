@@ -26,11 +26,6 @@ import com.spring.service.ProductService;
 public class HomeController {
 	@Autowired
 	ProductService productService;
-	/*@Autowired
-	CartDAO cartDAO;
-	
-	@Autowired
-	SessionFactory 	sessionFactory;*/
 	
 	@RequestMapping(value="/product{Categoryid}", method=RequestMethod.GET)
 	public String categoryList(@PathVariable ("Categoryid") int Categoryid , Map<String,Object> map , Model model)
@@ -41,18 +36,5 @@ public class HomeController {
 		return "ProductList";
 	}
 	
-/*	@RequestMapping(value=".../addtoCart/{Productid}/{price}", method=RequestMethod.POST)
-	public String addCart(@PathVariable("price") int price, @PathVariable("Productid") int Productid, Map<String,Object> map , Model model )
-	{
-		Cart cart= new Cart();
-		cart.setPid(Productid);
-		map.put("cart", cart);
-		cart.setProdprice(price);
-		cartDAO.saveCart(cart);
-			
-	return "redirect:/";
-		
-	}
-		
-*/}
+}
 

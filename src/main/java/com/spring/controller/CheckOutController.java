@@ -5,6 +5,7 @@ import java.util.List;
 
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -40,31 +41,14 @@ public class CheckOutController {
 	
 	@RequestMapping("/{userid}")
 	public String CheckoutPage(@ModelAttribute ("card") Card card,@PathVariable("userid") int userid, Model model){
-		/*card.setCard_userid(userid);*/
-		/*Cart cart = new Cart();
-		model.addAttribute("cart", cart);*/
 		model.addAttribute("total", checkOutDAO.getTotal(userid));
-		/*cardDAO.saveCard(card);*/
 		return "CheckOut";
 		
 	}
 
-	
-	/*@RequestMapping(value="/cardPay/invoice" , method=RequestMethod.POST)
-	public String InvoicePage(HttpSession session,Model model){
-		int userId = (Integer) session.getAttribute("userid");
-    	model.addAttribute("user", userDAO.getUserById(userId));
-    	model.addAttribute("cd", cartDAO.getCart(userId));
-    	model.addAttribute("total", checkOutDAO.getTotal(userId));
 		
-		return "Invoice";*/
-		
-		
-	
-	
 	@RequestMapping(value="/invoice",method=RequestMethod.POST)
 	public String InvoicePage(@ModelAttribute ("card") Card card,HttpSession session, Model model){
-		//Card cardPay = new Card();
 		int charges=99;
 		int userId = (Integer) session.getAttribute("userid");
 		card.setCard_userid(userId);
@@ -80,9 +64,5 @@ public class CheckOutController {
 	
 	}
 	
-	/*@RequestMapping(value="/invoice", method=RequestMethod.POST)
-	public void Page(Model model){
-		
-	}*/
 	
 }

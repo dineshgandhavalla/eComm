@@ -21,27 +21,7 @@ public class SupplierController {
 	@Autowired
 	SupplierDAO supplierDAO; 
 	
-/*	@RequestMapping(value="/supplier")
-	public String supplierPage(Model model)
-	{
-		model.addAttribute("supplier", new Supplier());
-		return "Supplier";
-		
-	}
-	
 
-	@RequestMapping(value="/saveSupplier",method = RequestMethod.POST)
-	public String addSupplier(@ModelAttribute("supplier")Supplier supplier)
-	{
-			
-			
-			supplierDAO.saveSupplier(supplier);
-			
-			return "redirect:/";
-			
-		}
-
-*/
 	@Autowired
 	private SupplierService supplierService;
 	
@@ -58,7 +38,6 @@ public class SupplierController {
 	@RequestMapping(value="/supplier.do", method=RequestMethod.POST)
 	public String doActions(@ModelAttribute Supplier supplier, BindingResult result, @RequestParam String action, Map<String, Object> map){
 		Supplier supplierResult = new Supplier();
-			//only in Java7 you can put String in switch
 		 if (action.equals("Add"))
 		 {
 			 supplierService.add(supplier);

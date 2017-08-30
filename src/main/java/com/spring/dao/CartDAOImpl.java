@@ -97,11 +97,14 @@ public List getCartByUser(int userid) {
 
 @SuppressWarnings("unchecked")
 @Transactional
-public boolean getCartByStatus(int userid) {
+public void getCartByStatus(int userid) {
 	
 	// TODO Auto-generated method stub
-	sessionFactory.getCurrentSession().createSQLQuery("UPDATE Cart SET status = 'P' where USERID ="+userid);
-	return true;
+	String hql="update Cart set status='P' where userid="+userid;	
+	@SuppressWarnings("rawtypes")
+	Query query = sessionFactory.getCurrentSession().createQuery(hql);
+	query.executeUpdate();
+	
 }
 
 	

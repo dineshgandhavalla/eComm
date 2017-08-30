@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 
@@ -17,6 +17,13 @@
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Registration-Form.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
+    <style>
+    div.modal-content{
+    max-width:75%;
+   
+    }
+    
+    </style>
 </head>
 
 <body>
@@ -88,28 +95,61 @@ ${logout }
 	</div>
     <br>
      <div class="container-fluid">
+     <div >
         <div class="row">
      <c:forEach items="${HomeList}" var="product">
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-4 col-sm-3">
                 <div class="thumbnail"><img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="298" height="398" />
                 <div class="caption">
                         <h3>${product.product_name}</h3>
                         <ul>
-                        <p>${product.description}</p>
                         <li>Price: Rs.<Strong>${product.price}</Strong></li>
-                        		
-                        		<form:form action="addToCart/${product.id}">
-                                <input type="submit" value="Add to Cart" class="btn btn-primary">
-                                </form:form>
-                        </ul>
+                    		<form:form action="addToCart/${product.id}">
+                                <button type="submit" value="Add to Cart" class="btn btn-primary btn-lg btn-cart"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart </button>
+                                 
+          </form:form>
+          <div>                 
+                                <button class="btn btn-warning btn-lg btn-cart" data-toggle="modal" data-target="#${product.id}" type="button">More details</button>
+    							   
+    							<div class="modal fade" id="${product.id}" role="dialog" tabindex="-1">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    
+    							   
+                    <h4 class="modal-title">${product.product_name}</h4></div>
+                <div class="modal-body">
+             		
+                <div class="thumbnail"><img src="/eComm/myImage/imageDisplay?id=${product.id}" alt="" width="200" height="300" />
+                     <ul>
+               
+                  <p>${product.description}</p>
+                    <li>Price: Rs.<Strong>${product.price}</Strong></li>
+                                  	</ul>
+                  <div class="col-xs-offset-2 col-xs-12">
+               </div>                    
+        </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                    <form:form action="addToCart/${product.id}">
+                     <button type="submit" value="Add to Cart" class="btn btn-primary btn-lg btn-cart"><span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart </button>
+              		</form:form>
+                </div>
+            </div>
+        </div>
+   </div>   
+                   </ul>
                     </div>
                 </div>
-                
+               
             </div>
+            
          </c:forEach>
                 </div>
             </div>
-        
+        </div>
     
     <footer class="navbar">
         <div class="row">

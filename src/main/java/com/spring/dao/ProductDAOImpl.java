@@ -95,7 +95,7 @@ public class ProductDAOImpl implements ProductDAO {
 		public List<Product> homeList() {
 			String hql="from Product ORDER BY RAND()";
 			@SuppressWarnings("rawtypes")
-			Query query=sessionFactory.getCurrentSession().createQuery(hql).setMaxResults(4);
+			Query query=sessionFactory.getCurrentSession().createQuery(hql).setMaxResults(6);
 			@SuppressWarnings("unchecked")
 			List<Product> listProduct = (List<Product>) query.list();
 			if (listProduct != null && !listProduct.isEmpty()) {

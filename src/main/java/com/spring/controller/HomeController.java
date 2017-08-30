@@ -1,6 +1,7 @@
 package com.spring.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +20,7 @@ import com.spring.dao.CartDAOImpl;
 import com.spring.dao.ProductDAO;
 import com.spring.model.Cart;
 import com.spring.model.Product;
+import com.spring.service.CategoryService;
 import com.spring.service.ProductService;
 
 
@@ -27,12 +29,17 @@ public class HomeController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	CategoryService categoryService;
+
 	@RequestMapping(value="/product{Categoryid}", method=RequestMethod.GET)
 	public String categoryList(@PathVariable ("Categoryid") int Categoryid , Map<String,Object> map , Model model)
 	{
 		Product product = new Product();
 		map.put("product", product);
 		map.put("prodList", productService.getProductByCategory(Categoryid));
+		map.put("categoryList",categoryService.getAllCategory());
+
 		return "ProductList";
 	}
 	

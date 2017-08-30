@@ -48,9 +48,13 @@ public class CheckOutController {
 
 		
 	@RequestMapping(value="/invoice",method=RequestMethod.POST)
-	public String InvoicePage(@ModelAttribute ("card") Card card,HttpSession session, Model model){
-		int charges=99;
+	public String InvoicePage( @ModelAttribute ("card") Card card, HttpSession session, Model model){
+		/*if(result.hasErrors()){
+			return "CheckOut";
+		}
+*/		int charges=99;
 		int userId = (Integer) session.getAttribute("userid");
+		cartDAO.getCartByStatus(userId);
 		card.setCard_userid(userId);
 		cardDAO.saveCard(card);
 	
@@ -64,5 +68,24 @@ public class CheckOutController {
 	
 	}
 	
+	@RequestMapping(value="/CodInvoice",method=RequestMethod.POST)
+	public String CodInvoicePage(@ModelAttribute ("card") Card card,HttpSession session, Model model){
+		int charges=99;
+		Cart cart = new Cart();
+		int userId = (Integer) session.getAttribute("userid");
+		cartDAO.getCartByStatus(userId);
+		
+		model.addAttribute("user", userDAO.getUser(userId));
+    	model.addAttribute("cd", cartDAO.getCartByUser(userId));
+    	/*cart.setGrandTotal(checkOutDAO.getTotal(userId)+"99");
+    	*/model.addAttribute("total",checkOutDAO.getTotal(userId));
+		
+		model.addAttribute("cod", charges);
+	
+		return "Invoice";
+	
+	
+	}
+
 	
 }

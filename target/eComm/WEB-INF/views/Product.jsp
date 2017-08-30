@@ -1,5 +1,4 @@
  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-   
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
@@ -66,7 +65,6 @@
                     </div>
                     <div class="col-sm-4 col-xs-6">
                         <form:input path="product_name" class="form-control" type="text"/>
-                        <form:errors path="product_name"></form:errors>
                     </div>
                 </div>
                 <div class="row">
@@ -75,7 +73,6 @@
                     </div>
                     <div class="col-sm-4 col-xs-6">
                         <form:textarea path="description" class="form-control"></form:textarea>
-                        <form:errors path="description"></form:errors>
                     </div>
                 </div>
                 <div class="row">
@@ -84,8 +81,7 @@
                         </div>
                     <div class="col-sm-4 col-xs-6">
                         <form:input path="price" class="form-control" type="text"/>
-                         <form:errors path="price"></form:errors>
-                  
+        
                     </div>
                 </div>
                 <div class="row">
@@ -100,7 +96,6 @@
                 <div class="row">
                     <div class="col-md-offset-3 col-sm-2 col-xs-6">
                         <form:label path="image" >Image </form:label>
-                          <form:errors path="image"></form:errors>
                     </div>
     		 
                <div class="col-sm-4 col-xs-6">

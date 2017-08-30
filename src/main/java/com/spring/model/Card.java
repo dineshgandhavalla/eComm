@@ -1,12 +1,11 @@
 package com.spring.model;
 
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,7 +18,8 @@ public class Card {
 	private int payid;
 
 	private String card_name;
-	private int card_number;
+	
+	private long card_number;
 
 	private int card_userid;
 	
@@ -41,10 +41,10 @@ public class Card {
 	public void setCard_name(String card_name) {
 		this.card_name = card_name;
 	}
-	public int getCard_number() {
+	public long getCard_number() {
 		return card_number;
 	}
-	public void setCard_number(int card_number) {
+	public void setCard_number(long card_number) {
 		this.card_number = card_number;
 	}
 }

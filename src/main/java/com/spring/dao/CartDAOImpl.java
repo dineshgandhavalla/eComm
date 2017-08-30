@@ -95,5 +95,14 @@ public List getCartByUser(int userid) {
 		return sessionFactory.getCurrentSession().createQuery("from Cart where userid="+userid).list();
 	}
 
+@SuppressWarnings("unchecked")
+@Transactional
+public boolean getCartByStatus(int userid) {
+	
+	// TODO Auto-generated method stub
+	sessionFactory.getCurrentSession().createSQLQuery("UPDATE Cart SET status = 'P' where USERID ="+userid);
+	return true;
+}
+
 	
 }	

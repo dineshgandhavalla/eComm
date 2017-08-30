@@ -5,14 +5,6 @@ import java.util.List;
 import com.spring.model.Cart;
 
 public interface CartDAO {
-	/*public boolean saveCart(Cart cart);
-	//public Cart getCart(int Cartid); 
-	
-	public List getAllCartDetails();
-	public List<Cart> list() ;
-	public List getCartByProduct(int Productid);
-
-*/
 
 public boolean saveProductToCart(Cart cart);
 	
@@ -24,4 +16,5 @@ public boolean saveProductToCart(Cart cart);
 	public Cart getCart(int id);
 	public List getAllCart();
 	public List getCartByUser(int userid);
+	public boolean getCartByStatus(int userid);
 }

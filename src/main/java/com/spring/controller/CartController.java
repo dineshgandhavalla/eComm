@@ -15,6 +15,7 @@ import com.spring.dao.CartDAO;
 import com.spring.dao.ProductDAO;
 import com.spring.model.Cart;
 import com.spring.model.Product;
+import com.spring.service.CategoryService;
 import com.spring.service.ProductService;
 
 @Controller
@@ -29,6 +30,9 @@ public class CartController {
 	@Autowired
 	ProductService productService;
 	
+	@Autowired
+	CategoryService categoryService;
+	
 	
 	Cart cart;
 
@@ -39,8 +43,10 @@ public class CartController {
     {
     	int userId = (Integer) session.getAttribute("userid");
     	int q=1;
+    	
     	if (cartDAO.getitem(id, userId) != null) {
 			Cart item = cartDAO.getitem(id, userId);
+			
 			item.setQuantity(item.getQuantity() + q);
 			Product p = productDAO.getProduct(id);
 			System.out.println(item);
@@ -51,6 +57,7 @@ public class CartController {
 			
 			cartDAO.saveProductToCart(item);
 			item.setSubTotal( (item.getQuantity()*p.getPrice()));
+			
 			cartDAO.saveProductToCart(item);
 			return "redirect:/cart";
 		} else {
@@ -62,6 +69,7 @@ public class CartController {
 			item.setQuantity(q);
 			item.setSubTotal(q * p.getPrice());
 			item.setProductprice(p.getPrice());
+			item.setStatus("C");
 			cartDAO.saveProductToCart(item);
 			return "redirect:/";
 		}
@@ -76,6 +84,7 @@ public class CartController {
 		int userId = (Integer) session.getAttribute("userid");
 	model.addAttribute("userid", userId);
 		model.addAttribute("cartList", cartDAO.getCartByUser(userId));
+		model.addAttribute("categoryList",categoryService.getAllCategory());
 		return "CartDetails";
     	
     }

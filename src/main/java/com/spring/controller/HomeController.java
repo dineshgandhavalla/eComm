@@ -1,13 +1,10 @@
 package com.spring.controller;
 
-import java.util.ArrayList;
-
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,10 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.spring.dao.CartDAO;
-import com.spring.dao.CartDAOImpl;
-import com.spring.dao.ProductDAO;
-import com.spring.model.Cart;
+import com.spring.dao.OrderDAO;
 import com.spring.model.Product;
 import com.spring.service.CategoryService;
 import com.spring.service.ProductService;
@@ -31,6 +25,10 @@ public class HomeController {
 	
 	@Autowired
 	CategoryService categoryService;
+	
+	@Autowired
+	OrderDAO orderDAO;
+	
 
 	@RequestMapping(value="/product{Categoryid}", method=RequestMethod.GET)
 	public String categoryList(@PathVariable ("Categoryid") int Categoryid , Map<String,Object> map , Model model)
@@ -42,6 +40,19 @@ public class HomeController {
 
 		return "ProductList";
 	}
-	
+
+	@RequestMapping(value="/myorders")
+	public String myOrders(Model model,HttpSession session)
+	{
+		/*model.addAttribute("users", new Users());*/
+		int userId = (Integer) session.getAttribute("userid");
+		
+		model.addAttribute("od", orderDAO.getOrderDetailsByUser(userId));
+				
+		model.addAttribute("total",orderDAO.getTotal(userId));
+		
+		return "myorders";
+		
+	}
 }
 

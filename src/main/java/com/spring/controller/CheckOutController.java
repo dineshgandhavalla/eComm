@@ -53,7 +53,7 @@ public class CheckOutController {
 
 		
 	@RequestMapping(value="/invoice",method=RequestMethod.POST)
-	public String InvoicePage( @ModelAttribute ("card") Card card, HttpSession session, Model model){
+	public String InvoicePage(@ModelAttribute ("card") Card card, HttpSession session, Model model){
 		/*if(result.hasErrors()){
 			return "CheckOut";
 		}
@@ -62,7 +62,6 @@ public class CheckOutController {
 		cartDAO.getCartByStatus(userId);
 		card.setCard_userid(userId);
 		cardDAO.saveCard(card);
-	
 		model.addAttribute("user", userDAO.getUser(userId));
     	model.addAttribute("cd", cartDAO.getCartByUser(userId));
     	model.addAttribute("total",checkOutDAO.getTotal(userId));

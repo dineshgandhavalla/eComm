@@ -109,14 +109,7 @@
 			<td>${cd.productname}</td>
 			<td>${cd.productprice}</td>
 			<td>${cd.quantity}</td>
-			<td>${cd.subTotal}</td>
-				
-			
-			<%-- <td><div class="thumbnail">
-			<img height="200px" width="200px" atl="${product.id}"
-			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
-			</div></td> --%>
-			
+			<td>${cd.subTotal}</td>	
 			
 		</tr>
 </c:forEach>	

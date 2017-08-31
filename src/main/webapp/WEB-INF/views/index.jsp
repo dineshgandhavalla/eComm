@@ -10,13 +10,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>N BakesAndCakes</title>
-    <link rel="stylesheet" href="<c:url value="resources/assets/bootstrap/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/assets/bootstrap/css/bootstrap.min.css"/>">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="<c:url value="resources/assets/fonts/font-awesome.min.css"/>">
-    <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
-    <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
-    <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Registration-Form.css"/>">
-    <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/assets/fonts/font-awesome.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/assets/css/styles.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/assets/css/Pretty-Footer.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/assets/css/Pretty-Registration-Form.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/assets/css/Google-Style-Login.css"/>">
     <style>
     div.modal-content{
     max-width:75%;
@@ -51,8 +51,16 @@ ${logout }
              </sec:authorize>
             
              <sec:authorize access="isAuthenticated()">
-            		  <li class="active" role="presentation"><a href="cart">Shop<i class="glyphicon glyphicon-shopping-cart"></i></a></li>
-                      <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
+            		  <li class="active" role="presentation"><a href="cart">Shop<i class="glyphicon glyphicon-shopping-cart"></i><%--  <span class="badge">${size}</span> --%></a></li>
+                      <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" href="#" data-hover="dropdown" > <i class="glyphicon glyphicon-user"></i><!-- <span class="caret"></span> --></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation"><a href="#">My Account</a></li>
+                            <li role="presentation"><a href="myorders">My Orders</a></li>
+                            <li> <a href="<c:url value="j_spring_security_logout" />">Logout</a></li>
+                        </ul>
+                    </li>
+                      
              </sec:authorize>
 
                 </ul>
@@ -109,7 +117,7 @@ ${logout }
                                  
           </form:form>
           <div>                 
-                                <button class="btn btn-warning btn-lg btn-cart" data-toggle="modal" data-target="#${product.id}" type="button">More details</button>
+                                <button class="btn btn-primary btn-lg btn-cart" data-toggle="modal" data-target="#${product.id}" type="button">More details</button>
     							   
     							<div class="modal fade" id="${product.id}" role="dialog" tabindex="-1">
         <div class="modal-dialog" role="document">
@@ -150,6 +158,31 @@ ${logout }
                 </div>
             </div>
         </div>
+        
+        
+        <div class="container">
+        <div id="map" style="width:100%;height:300px"></div>
+        </div>
+        
+        <script>
+function myMap() {
+  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 5};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+
+  // Zoom to 9 when clicking on marker
+  google.maps.event.addListener(marker,'click',function() {
+    map.setZoom(9);
+    map.setCenter(marker.getPosition());
+  });
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+        
     
     <footer class="navbar">
         <div class="row">

@@ -28,8 +28,8 @@ div.jumbotron{
 
 .btn.btn-cart{
   font-weight:700;
-  height:36px;
- 
+  height:46px;
+  width:100px;
   line-height:36px;
   font-size:14px;
   background:rgb(90,25,3);/* rgb(255,197,84); */

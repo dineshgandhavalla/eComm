@@ -114,5 +114,7 @@ public void deleteCartbyUserId(int userid) {
 	query.executeUpdate();
 
 }
+
+
 	
 }	

@@ -16,5 +16,7 @@ public boolean saveProductToCart(Cart cart);
 	public Cart getCart(int id);
 	public List getAllCart();
 	public List getCartByUser(int userid);
+	public void deleteCartbyUserId(int userid);
+
 	public void getCartByStatus(int userid);
 }

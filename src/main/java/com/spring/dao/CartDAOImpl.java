@@ -107,5 +107,12 @@ public void getCartByStatus(int userid) {
 	
 }
 
+@Transactional
+public void deleteCartbyUserId(int userid) {
+	// TODO Auto-generated method stub
+	Query query = sessionFactory.getCurrentSession().createQuery("delete Cart where userid="+userid);
+	query.executeUpdate();
+
+}
 	
 }	

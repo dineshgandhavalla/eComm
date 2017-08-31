@@ -14,13 +14,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name="CART_DETAILS") 
-public class Cart {
+@Table(name="Pay_DETAILS") 
+public class Order {
 	
 	@Id
-	@Column(name="Cartid")
-	@GeneratedValue
-	private int id;
+	@Column(name="Orderid")
+	/*@GeneratedValue*/
+	private String orderId;
 	
 	private int userid;
 	private String productname;
@@ -29,7 +29,6 @@ public class Cart {
 	private String status;
 	private double subTotal;
 	private int productid;
-	private String orderId;
 	
 	public int getProductid() {
 		return productid;
@@ -38,21 +37,11 @@ public class Cart {
 		this.productid = productid;
 	}
 	
-	
-		public String getOrderId() {
+	public String getOrderId() {
 		return orderId;
 	}
 	public void setOrderId(String orderId) {
 		this.orderId = orderId;
-	}
-		public void setProductprice(double productprice) {
-		this.productprice = productprice;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public int getUserid() {
 		return userid;
@@ -68,6 +57,9 @@ public class Cart {
 	}
 	public double getProductprice() {
 		return productprice;
+	}
+	public void setProductprice(double d) {
+		this.productprice = d;
 	}
 	public int getQuantity() {
 		return quantity;

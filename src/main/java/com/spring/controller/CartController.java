@@ -1,5 +1,10 @@
 package com.spring.controller;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 
@@ -34,7 +39,7 @@ public class CartController {
 	CategoryService categoryService;
 	
 	
-	Cart cart;
+/*	Cart cart;*/
 
 	
 	
@@ -55,6 +60,13 @@ public class CartController {
 			/*item.setSubTotal(item.getProductprice() + (q*p.getPrice()));
 			*/
 			
+			String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+			 
+			/* Date date = new java.util.Date();
+			   long diff = date.getTime();
+			   item.setOrderId(diff);*/
+			item.setOrderId(timeStamp);
+		
 			cartDAO.saveProductToCart(item);
 			item.setSubTotal( (item.getQuantity()*p.getPrice()));
 			
@@ -70,6 +82,9 @@ public class CartController {
 			item.setSubTotal(q * p.getPrice());
 			item.setProductprice(p.getPrice());
 			item.setStatus("C");
+			
+			String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+			item.setOrderId(timeStamp);
 			cartDAO.saveProductToCart(item);
 			return "redirect:/";
 		}

@@ -23,7 +23,7 @@ import com.spring.dao.SupplierDAOImpl;
 import com.spring.model.Card;
 import com.spring.model.Cart;
 import com.spring.model.Category;
-
+import com.spring.model.Order;
 import com.spring.model.Product;
 import com.spring.model.Supplier;
 import com.spring.model.Users;
@@ -67,9 +67,7 @@ public class HbConfig {
 		sessionBuilder.addAnnotatedClasses(Supplier.class);
 		sessionBuilder.addAnnotatedClasses(Cart.class);
 		sessionBuilder.addAnnotatedClasses(Card.class);
-
-		
-
+		sessionBuilder.addAnnotatedClasses(Order.class);
 		System.out.println("Session");
 		
 		return sessionBuilder.buildSessionFactory();

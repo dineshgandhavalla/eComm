@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.spring.dao.CardDAO;
 import com.spring.dao.CartDAO;
 import com.spring.dao.CheckOutDAO;
+import com.spring.dao.OrderDAO;
 import com.spring.dao.UserDAO;
 import com.spring.model.Card;
 import com.spring.model.Cart;
+import com.spring.model.Order;
 import com.spring.model.Users;
 
 @Controller
@@ -35,6 +37,9 @@ public class CheckOutController {
 	
 	@Autowired
 	CartDAO cartDAO;
+	
+	@Autowired
+	OrderDAO orderDAO;
 	
 	@Autowired
 	CardDAO cardDAO;
@@ -71,17 +76,18 @@ public class CheckOutController {
 	@RequestMapping(value="/CodInvoice",method=RequestMethod.POST)
 	public String CodInvoicePage(@ModelAttribute ("card") Card card,HttpSession session, Model model){
 		int charges=99;
-		Cart cart = new Cart();
+		
 		int userId = (Integer) session.getAttribute("userid");
 		cartDAO.getCartByStatus(userId);
 		
+		orderDAO.OrderDetails();
 		model.addAttribute("user", userDAO.getUser(userId));
     	model.addAttribute("cd", cartDAO.getCartByUser(userId));
     	/*cart.setGrandTotal(checkOutDAO.getTotal(userId)+"99");
     	*/model.addAttribute("total",checkOutDAO.getTotal(userId));
 		
 		model.addAttribute("cod", charges);
-	
+		cartDAO.deleteCartbyUserId(userId);
 		return "Invoice";
 	
 	

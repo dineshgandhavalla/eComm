@@ -44,6 +44,12 @@
         </div>
     </nav>
     
+     <div class="jumbotron">
+     <h1>Hey!Admin</h1>
+  <h2>Welcome to N Bakes & Cakes</h2>      
+  <p>One Destination for all your Celebrations</p>
+</div>
+    
     <div 
    <c:import url="/WEB-INF/views/footer.jsp" />>
 </div>

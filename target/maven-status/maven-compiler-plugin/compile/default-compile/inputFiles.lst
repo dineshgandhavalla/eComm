@@ -10,6 +10,7 @@ E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\SupplierContr
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Supplier.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CheckOutDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Card.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\OrderDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\CategoryController.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\CartServiceImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\ProductServiceImpl.java
@@ -30,7 +31,9 @@ E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CategoryDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\CartService.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\CartDAO.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Users.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\OrderDAO.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\controller\RegistrationController.java
+E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\model\Order.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\UserDAO.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\dao\UserDAOImpl.java
 E:\java\ProjectWorkspace\eComm\src\main\java\com\spring\service\SupplierService.java

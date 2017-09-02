@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="<c:url value="resources/assets/bootstrap/css/bootstrap.min.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/styles.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/category.css"/>">
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-        <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
-        <link rel="stylesheet" href="<c:url value="resources/assets/fonts/font-awesome.min.css"/>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
+    <link rel="stylesheet" href="<c:url value="resources/assets/fonts/font-awesome.min.css"/>">
 </head>
 
 <body>
@@ -62,12 +62,11 @@
                         <form:input path="supplier_name" class="form-control" type="text"/>
                     </div>
                 </div>
-                <div class="row">
-                <input type="submit" name="action" value="Add" />
-				<input type="submit" name="action" value="Edit" />
-				<input type="submit" name="action" value="Delete" />
-				<input type="submit" name="action" value="Search" />
-                
+                 <div class="row" align="center">
+                <button class="btn btn-warning" type="submit" name="action" value="Add" ><span class="glyphicon glyphicon-plus"></span></button>
+				<button class="btn btn-warning" type="submit" name="action" value="Edit" ><span class="glyphicon glyphicon-edit"></span></button>
+				<button class="btn btn-warning" type="submit" name="action" value="Delete" ><span class="glyphicon glyphicon-trash"></span></button>
+				<button class="btn btn-warning" type="submit" name="action" value="Search" ><span class="glyphicon glyphicon-search"></span></button>
                 </div>
             </form:form>
              </div>

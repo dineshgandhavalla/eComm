@@ -10,11 +10,13 @@ com\spring\dao\UserDAO.class
 com\spring\dao\CheckOutDAO.class
 com\spring\dao\CartDAO.class
 com\spring\dao\CategoryDAOImpl.class
+com\spring\dao\OrderDAO.class
 com\spring\hbconfig\HbConfig.class
 com\spring\service\CategoryService.class
 com\spring\service\ProductServiceImpl.class
 com\spring\dao\CategoryDAO.class
 com\spring\model\Supplier.class
+com\spring\dao\OrderDAOImpl.class
 com\spring\dao\CardDAO.class
 com\spring\controller\ProductController.class
 com\spring\service\SupplierServiceImpl.class
@@ -30,6 +32,7 @@ com\spring\service\ProductService.class
 com\spring\model\Users.class
 com\spring\service\SupplierService.class
 com\spring\dao\CardDAOImpl.class
+com\spring\model\Order.class
 com\spring\dao\ProductDAOImpl.class
 com\spring\model\Cart.class
 com\spring\controller\CheckOutController.class

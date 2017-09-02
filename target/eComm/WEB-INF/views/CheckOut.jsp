@@ -22,11 +22,11 @@
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Google-Style-Login.css"/>">
 	<link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Footer.css"/>">
     <link rel="stylesheet" href="<c:url value="resources/assets/css/Pretty-Registration-Form.css"/>">
- 
     
 </head>
 
-<body >
+<body>
+
 <div 
    <c:import url="/WEB-INF/views/header.jsp" />>
 </div>
@@ -64,13 +64,16 @@
                                         <div class="form-group">
                                             <form:label class="control-label" path="card_number">Card number </form:label>
                                             <div class="input-group">
-                                                <form:input class="form-control" type="tel" required="" placeholder="Valid Card Number" " path="card_number"/>
+                                                <form:input class="form-control" type="tel" required="" placeholder="Valid Card Number" path="card_number"/>
                                                 <div class="input-group-addon"><span><i class="fa fa-credit-card"></i></span></div>
-                                                                        <form:errors path="card_number"></form:errors>
-                                            </div>
+                                                 </div>
                                         </div>
                                     </div>
                                 </div>
+                              <%--   <div class="alert alert-danger alert-dismissable fade in">
+                                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                                 <strong><form:errors path="card_number"></form:errors></strong>
+                                 </div> --%>
                                 <div class="row">
                                     <div class="col-xs-9">
                                         <div class="form-group">
@@ -123,7 +126,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-success btn-block btn-lg"  type="submit">Pay With Card</button>
+                                        <button class="btn btn-success btn-block btn-lg" type="submit">Pay With Card</button>
                                     </div>
                                 </div>
                             </form:form>
@@ -135,7 +138,7 @@
    <br>
   
 
-   <form:form action="invoice" id="payment-form" modelAttribute="card">                         
+   <form:form action="CodInvoice" id="payment-form" modelAttribute="card">                         
   	<div class="row">
     <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
         <button class="btn btn-warning btn-block" data-toggle="modal" data-target="#myModal" type="button">Cash on Delivery</button>
@@ -169,6 +172,7 @@
     <div 
    <c:import url="/WEB-INF/views/footer.jsp" />>
 </div>
+    
     
     <script src="<c:url value= "/resources/assets/js/jquery.min.js"/>"></script>
     <script src="<c:url value= "/resources/assets/bootstrap/js/bootstrap.min.js"/>"></script>

@@ -126,7 +126,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-12">
-                                        <button class="btn btn-success btn-block btn-lg" type="submit">Pay With Card</button>
+                                        <button class="btn btn-success btn-block btn-lg" type="submit" >Pay With Card</button>
                                     </div>
                                 </div>
                             </form:form>

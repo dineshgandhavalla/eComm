@@ -166,7 +166,7 @@ ${logout }
         
         <script>
 function myMap() {
-  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var myCenter = new google.maps.LatLng(17.4836979,78.3158338);
   var mapCanvas = document.getElementById("map");
   var mapOptions = {center: myCenter, zoom: 5};
   var map = new google.maps.Map(mapCanvas, mapOptions);
@@ -181,7 +181,7 @@ function myMap() {
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALCNrf2vvP9ECAFAWh0I4OQIhnLLFTKoE&callback=myMap"></script>
         
     
     <footer class="navbar">

@@ -140,14 +140,15 @@
 							</form:select>
 					</div>
 	</div>
-	  <div class="row">
+	  <div class="row" align="center">
 	  <div class="col-md-offset-2 col-sm-8 col-xs-6">
 	
-                <input class="btn-block" type="submit" name="action" value="Add" />
-				<input class="btn-block" type="submit" name="action" value="Edit" />
-				<input class="btn-block" type="submit" name="action" value="Delete" />
-				<input class="btn-block" type="submit" name="action" value="Search" />
-                </div>
+
+                <button class="btn btn-warning" type="submit" name="action" value="Add" ><span class="glyphicon glyphicon-plus"></span></button>
+				<button class="btn btn-warning" type="submit" name="action" value="Edit" ><span class="glyphicon glyphicon-edit"></span></button>
+				<button class="btn btn-warning" type="submit" name="action" value="Delete" ><span class="glyphicon glyphicon-trash"></span></button>
+				<button class="btn btn-warning" type="submit" name="action" value="Search" ><span class="glyphicon glyphicon-search"></span></button>
+                           </div>
     </div>     
  </form:form>
 </div>
@@ -165,10 +166,10 @@
 		<tr>
 	<th>ID</th>
 	<th>Product name</th>
-	<th>Product desc</th>
-	<th>product price</th>
-	<th>product stock</th>
-	<th>image</th>
+	<th>Description</th>
+	<th>Price</th>
+	<th>Stock</th>
+	<th>Image</th>
 </tr>
 </thead>	
 <tbody>	

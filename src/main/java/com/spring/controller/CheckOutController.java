@@ -8,6 +8,9 @@ import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.MailException;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -25,12 +28,19 @@ import com.spring.model.Card;
 import com.spring.model.Cart;
 import com.spring.model.Order;
 import com.spring.model.Users;
+import com.spring.service.MailService;
 
 @Controller
 public class CheckOutController {
 
 	@Autowired
 	CheckOutDAO checkOutDAO;
+	
+	@Autowired
+	JavaMailSender mailSender;
+	
+	@Autowired
+	MailService mailService;
 	
 	@Autowired
 	UserDAO userDAO;
@@ -62,11 +72,14 @@ public class CheckOutController {
 		cartDAO.getCartByStatus(userId);
 		card.setCard_userid(userId);
 		cardDAO.saveCard(card);
+		orderDAO.OrderDetails();
+		
+	   	
 		model.addAttribute("user", userDAO.getUser(userId));
     	model.addAttribute("cd", cartDAO.getCartByUser(userId));
     	model.addAttribute("total",checkOutDAO.getTotal(userId));
 		model.addAttribute("cod", charges);
-		
+		cartDAO.deleteCartbyUserId(userId);
 		return "Invoice";
 	
 	
@@ -78,13 +91,17 @@ public class CheckOutController {
 		
 		int userId = (Integer) session.getAttribute("userid");
 		cartDAO.getCartByStatus(userId);
-		
+		mailService.sendEmail(userId);
+	
 		orderDAO.OrderDetails();
+		
+		
+		
 		model.addAttribute("user", userDAO.getUser(userId));
     	model.addAttribute("cd", cartDAO.getCartByUser(userId));
     	/*cart.setGrandTotal(checkOutDAO.getTotal(userId)+"99");
     	*/model.addAttribute("total",checkOutDAO.getTotal(userId));
-		
+   
 		model.addAttribute("cod", charges);
 		cartDAO.deleteCartbyUserId(userId);
 		return "Invoice";

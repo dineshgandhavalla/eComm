@@ -109,14 +109,7 @@
 			<td>${cd.productname}</td>
 			<td>${cd.productprice}</td>
 			<td>${cd.quantity}</td>
-			<td>${cd.subTotal}</td>
-				
-			
-			<%-- <td><div class="thumbnail">
-			<img height="200px" width="200px" atl="${product.id}"
-			src="<c:url value="/resources/images/${product.id}.jpg"></c:url>">
-			</div></td> --%>
-			
+			<td>${cd.subTotal}</td>	
 			
 		</tr>
 </c:forEach>	
@@ -124,7 +117,8 @@
 	
 </table>
      <div class='form-control'>
-                  Total:  <span class='amount'>Rs.${total}</span>
+     
+                  Total:  <span class='amount'>Rs.${total}${cod}</span>
      </div>  
  
   
@@ -133,7 +127,7 @@
 </div>
 <div class="row">
 <div class="col-md-offset-2 col-md-2">
-<button class="btn btn-info" onclick="printDiv('printableArea')">Print Invoice</button>
+<button class="btn btn-info" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print"></span>Print Invoice</button>
 </div>
 		<div class="col-md-4">
        <a href="index" class="btn btn-danger" role="button">Continue Shopping</a>
